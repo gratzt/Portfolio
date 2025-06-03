@@ -17,21 +17,16 @@ Hi, I'm Trevor Gratz, a data scientist with experience in predictive analytics, 
 
 ## About Me {#about-me}
 
-I have a background in mathematics, statistics, and data science, and I've worked in academia and the public sector. I received my Bachelor of Science in Mathematics and Statistics in 2014 from the University of Washington, and my Master of Science in Data Analytics from Georgia Tech in August, 2025. I have over a decade of work experience in data analytics and am a co-author on over ten peer reviewed [publications](https://scholar.google.com/citations?user=X7r0bxsAAAAJ&hl=en&oi=ao) cited by over 500 journal articles. My work emphasizes:
-
-- **Languages:** Python, R, SQL, Stata  
-- **Libraries/Frameworks:** scikit-learn, pandas, NumPy, PyTorch, Geopandas, Statsmodels  
-- **Tools:** git, Jupyter, VS Code  
-- **Techniques:** Machine Learning, Causal Inference, Optimization, Regression, Classification 
-
+I have a background in mathematics, statistics, and data science, and I've worked in academia and the public sector. I received my Bachelor of Science in Mathematics and Statistics in 2014 from the University of Washington, and my Master of Science in Data Analytics from Georgia Tech in August, 2025. I have over a decade of work experience in data analytics and am a co-author on over ten peer reviewed [publications](https://scholar.google.com/citations?user=X7r0bxsAAAAJ&hl=en&oi=ao) cited by over 500 journal articles. 
 
 ---
 
 ## Skills Summary
 
-- **Languages:** Python, R, SQL
-- **Tools & Libraries:** scikit-learn, pandas, NumPy, Pytorch, Matplotlib, Geopandas, Statsmodels, git
-- **Techniques:** Machine Learning, Optimization, Causal Inference, Regression, Classification
+- **Languages:** Python, R, SQL, Stata  
+- **Libraries/Frameworks:** scikit-learn, pandas, NumPy, PyTorch, Geopandas, Statsmodels  
+- **Tools:** git, Jupyter, VS Code  
+- **Techniques:** Machine Learning, Causal Inference, Optimization, Regression, Classification 
 
 ---
 
