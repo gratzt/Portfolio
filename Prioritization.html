@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Optimizing Housing Interventions for Equitable Homelessness Reduction – Trevor Gratz</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Trevor Gratz</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Resume.html"> 
+<span class="menu-text">Trevor Gratz</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">📌 TL;DR</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#overview-1" id="toc-overview-1" class="nav-link" data-scroll-target="#overview-1">Overview</a></li>
+  <li><a href="#predicting-exit-from-homelessness" id="toc-predicting-exit-from-homelessness" class="nav-link" data-scroll-target="#predicting-exit-from-homelessness">Predicting Exit from Homelessness</a></li>
+  <li><a href="#optimization-to-maximize-exits" id="toc-optimization-to-maximize-exits" class="nav-link" data-scroll-target="#optimization-to-maximize-exits">Optimization to Maximize Exits</a></li>
+  <li><a href="#role-of-conditional-average-treatment-effects-cate" id="toc-role-of-conditional-average-treatment-effects-cate" class="nav-link" data-scroll-target="#role-of-conditional-average-treatment-effects-cate">Role of Conditional Average Treatment Effects (CATE)</a></li>
+  <li><a href="#incorporating-equity" id="toc-incorporating-equity" class="nav-link" data-scroll-target="#incorporating-equity">Incorporating Equity</a></li>
+  <li><a href="#practical-considerations" id="toc-practical-considerations" class="nav-link" data-scroll-target="#practical-considerations">Practical Considerations</a></li>
+  </ul></li>
+  <li><a href="#technical-challenges-and-solutions" id="toc-technical-challenges-and-solutions" class="nav-link" data-scroll-target="#technical-challenges-and-solutions">Technical Challenges and Solutions</a></li>
+  <li><a href="#policy-implications" id="toc-policy-implications" class="nav-link" data-scroll-target="#policy-implications">Policy Implications</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Optimizing Housing Interventions for Equitable Homelessness Reduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">📌 TL;DR</h2>
+<ul>
+<li>Derived mathematical relationship between housing intervention prioritization and treatment effects for exiting homelessness</li>
+<li>Used this mathematical relationship to identify a misalignment between the department of Housing and Urban Development(HUD) policy objectives and optimal resource allocation</li>
+<li>Developed an optimization framework that balances maximizing exits from homelessness with equitable resource allocation</li>
+<li>Created a dynamic weighting algorithm that ensures Fair Housing Act compliance</li>
+<li>Achieved resource allocation that maximizes exits from homelessness while maintaining equity ratios within ±5% of parity</li>
+</ul>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In 2023, over half a million people in the United States experienced homelessness on a single night, with this population continuing to grow despite substantial government funding. Nevertheless, these resources remain insufficient to meet the need.</p>
+<p>Continuums of Care, the local agencies overseeing housing assistance, must prioritize households based on observable characteristics for reciept of scarce housing resources. HUD’s current recommendations direct prioritization scores to be based on barriers to obtain housing and household vulnerabilities. When housing slots become available, households with the highest prioritization scores are selected for interventions such as rapid rehousing (RRH), transitional housing (TSH), or permanent supportive housing (PSH). Due to resource constraints, most eligible households do not receive housing interventions.</p>
+<p>This project addresses a critical question in homelessness policy: How can we allocate scarce housing interventions to maximize successful exits from homelessness while ensuring an equitable distribution across protected demographic groups?</p>
+<p>Building on the work of Kube et al.&nbsp;(2023), this project developed and expanded an optimization framework that not only maximizes system efficiency but also incorporates equity constraints to prevent disparate impacts. This approach demonstrates how data science can support effective policymaking and balance competing policy objectives. A full write-up is available <a href="'reports/EquitableInterventionAllocation.pdf'">here</a></p>
+</section>
+<section id="key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
+<p>Analysis of housing intervention data revealed three critical findings:</p>
+<ol type="1">
+<li><p><strong>Policy misalignment:</strong> Current HUD prioritization guidance (CPD-17-01) emphasizes barriers to obtainin housing and vulnerability factors rather than their responsivness to housing interventions, as measured by change in the likelihood of a successful exit in response to a housing intervention. Focusing on a household’s response to housing interventions aligns with the objective of exiting the greatest number of people from homelessness. Approaches that do not focus on a household’s responsiveness to interventions may reduce overall system effectiveness.</p></li>
+<li><p><strong>Intervention effectivness disparities:</strong> The effectiveness of interventions, i.e.&nbsp;conditional average treatment effects (CATEs), vary significantly across demographic groups. For example rapid rehousing shows a stronger positive impact on the likelihood of a successful exit from homelessness for female-identifying heads of households (see Figure 1). Simulated intervention effectiveness may be used as an exploratory data analysis tool for understanding potential disproportionate assignment to housing interventions.</p></li>
+<li><p><strong>Equity-efficiency tradeoff:</strong> Without adjustment, allocating housing interventions based purely on maximizing exits from homelessness creates inequitable resource distributions. Risk-ratio penalization in the optimiztion cost function can balance the trade-offs inherent between the most efficient allocations, as measured by the most number of exiting households, and equitable allocations.</p></li>
+</ol>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>Our <a href="'reports/EquitableInterventionAllocation.pdf'">report</a> demonstrates that maximizing the number of households exiting homelessness requires strategic allocation of housing resources. Specifically, interventions should be directed toward households with the greatest increase in their likelihood of exiting homelessness when receiving support versus none.</p>
+<p>Figure 1 below depicts the distribution of the change in the likelihood of exiting homelessness (.i.e. CATEs) for rapid rehousing by whether the head of household identified as female or male. Figure 1 clearly shows that female-identifying households are more responsive to housing interventions.</p>
+<p><strong>Figure 1:</strong> Rapid Re-Housing Treatment Effects by Gender</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/RRH_Gender.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>Based on Figure 1, a naïve implementation of the optimization algorithm proposed by Kube et al.&nbsp;(2023) would prioritize female-identifying heads of households for rapid rehousing (RRH), as they show higher predicted treatment effects. While this would increase overall exits from homelessness, it would result in inequitable resource allocation.</p>
+<p>Our approach addresses this by leveraging the sequential nature of housing intervention availability. As slots open over time, we track cumulative allocations by subgroup and adjust the optimization objective using a dynamic penalty for over- or under-representation. This ensures more equitable distribution of resources across groups without sacrificing performance.</p>
+<p>A risk ratio is the proportion of a subgroup’s intervention assignments relative to their proportion in the overall population. A risk ratio of 1 indicates perfect parity, while values above or below 1 reflect over- or under-assignment, respectively.</p>
+<p>Figure 2 shows the cumulative allocation of housing interventions over time for male and female-identifying heads of households, alongside their corresponding risk ratios. The plot on the right illustrates the shift in risk ratios before and after applying equity weights.</p>
+<p><strong>Figure 2:</strong> Equity-Weighted Optimization Results (C=0.49)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/weighted_optimization.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>By applying a weighting factor, the model maintained risk ratios within ±5% of parity while still maximizing exits from homelessness. The final equity-weighted model achieved risk ratios of 0.96 for male-headed households and 1.04 for female-headed households, demonstrating both strong system performance and equitable allocation.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="overview-1" class="level3">
+<h3 class="anchored" data-anchor-id="overview-1">Overview</h3>
+<p>This study develops a method for allocating scarce housing interventions in a way that maximizes the number of households exiting homelessness. The method is based on the optimization framework proposed by Kube et al.&nbsp;(2023) and is extended to address equity concerns under the Fair Housing Act.</p>
+<p>The methodology consists of three steps:</p>
+<ol type="1">
+<li><strong>Estimate exit probabilities</strong> for each household with and without intervention.</li>
+<li><strong>Optimize intervention assignments</strong> to maximize expected exits from homelessness.</li>
+<li><strong>Introduce equity constraints</strong> to ensure fair allocation across protected subgroups.</li>
+</ol>
+<hr>
+</section>
+<section id="predicting-exit-from-homelessness" class="level3">
+<h3 class="anchored" data-anchor-id="predicting-exit-from-homelessness">Predicting Exit from Homelessness</h3>
+<p>We trained predictive models to estimate the likelihood that a household exits homelessness under different treatment conditions. The models predict the binary outcome of a successful exit (i.e., stable housing with no reentry within six months).</p>
+<p>Several configurations were tested:</p>
+<ul>
+<li><strong>Algorithms:</strong> Random Forest, Elastic Net</li>
+<li><strong>Feature sets:</strong> head-of-household variables, aggregated household variables, and both</li>
+<li><strong>Encodings:</strong> one-hot encoding and weight-of-evidence</li>
+<li><strong>Transformations:</strong> standardization, log transformation of skewed variables</li>
+<li><strong>Dimensionality reduction:</strong> with and without PCA (retaining 95% variance)</li>
+</ul>
+<p>A Random Forest classifier performed best, with an AUROC of 0.84 on validation data.</p>
+<hr>
+</section>
+<section id="optimization-to-maximize-exits" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-to-maximize-exits">Optimization to Maximize Exits</h3>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(p_{ijt}\)</span> be the predicted probability that household <span class="math inline">\(i\)</span> exits homelessness in week <span class="math inline">\(t\)</span> if assigned intervention <span class="math inline">\(j\)</span>. No intervention is included in the set of of “interventions” J, and corresponds to <span class="math inline">\(j=0\)</span></li>
+<li><span class="math inline">\(x_{ijt}\)</span> be a binary indicator of whether household <span class="math inline">\(i\)</span> is assigned intervention <span class="math inline">\(j\)</span> in week <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(C_{jt}\)</span> be the number of available slots for intervention <span class="math inline">\(j\)</span> in week <span class="math inline">\(t\)</span></li>
+</ul>
+<p>The objective is to maximize the expected number of exits:</p>
+<p><span class="math display">\[
+\max_{x_{ijt}} \sum_{i=1}^{N} \sum_{j} p_{ijt} \cdot x_{ijt}
+\]</span></p>
+<p>Subject to:</p>
+<ul>
+<li>Capacity constraints: <span class="math inline">\(\sum_i x_{ijt} = C_{jt}\)</span> for all <span class="math inline">\(j \ne 0\)</span></li>
+<li>One intervention per household: <span class="math inline">\(\sum_j x_{ijt} = 1\)</span></li>
+<li><span class="math inline">\(x_{ijt} \in \{0, 1\}\)</span></li>
+</ul>
+<p>This integer program is solved weekly as new capacity becomes available.</p>
+<hr>
+</section>
+<section id="role-of-conditional-average-treatment-effects-cate" class="level3">
+<h3 class="anchored" data-anchor-id="role-of-conditional-average-treatment-effects-cate">Role of Conditional Average Treatment Effects (CATE)</h3>
+<p>In a simplified setting (one intervention, two households, one slot), the optimization reduces to selecting the household with the largest difference in predicted outcomes with vs.&nbsp;without treatment:</p>
+<p><span class="math display">\[
+\max \left[ x_{1,\text{tx}}(p_{1,\text{tx}} - p_{1,\text{ntx}}) + x_{2,\text{tx}}(p_{2,\text{tx}} - p_{2,\text{ntx}}) \right]
+\]</span></p>
+<p>Subject to:</p>
+<p><span class="math display">\[
+x_{1,\text{tx}} + x_{2,\text{tx}} = 1
+\]</span></p>
+<p>Thus, we assign the intervention to the household with the largest <strong>conditional average treatment effect</strong>.</p>
+<hr>
+</section>
+<section id="incorporating-equity" class="level3">
+<h3 class="anchored" data-anchor-id="incorporating-equity">Incorporating Equity</h3>
+<p>To avoid disproportionately assigning interventions to certain subgroups, we track assignment rates over time and modify the optimization.</p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(\alpha_g\)</span> be the historical proportion of group <span class="math inline">\(g\)</span></li>
+<li><span class="math inline">\(\gamma_{gt^*}\)</span> be the cumulative assignment rate to group <span class="math inline">\(g\)</span> up to time <span class="math inline">\(t^*\)</span></li>
+<li><span class="math inline">\(r_{gt^*} = \gamma_{gt^*} / \alpha_g\)</span> be the <strong>risk ratio</strong></li>
+</ul>
+<p>We introduce an equity penalty weighted by a tunable hyperparameter <span class="math inline">\(C\)</span>:</p>
+<p><span class="math display">\[
+\max_{x_{ijt}} \sum_{i,j,t} p_{ijt} \cdot x_{ijt} + \sum_{j \ne 1} C \cdot (1 - r_{gt^*}) \cdot x_{ijt}
+\]</span></p>
+<ul>
+<li>When a group is <strong>under-assigned</strong>, <span class="math inline">\(r_{gt^*} &lt; 1\)</span>, and the penalty is positive — boosting that group’s priority.</li>
+<li>When <strong>over-assigned</strong>, the penalty is negative.</li>
+</ul>
+<p>We select <span class="math inline">\(C\)</span> by grid search to ensure long-run risk ratios remain within ±5% of parity across groups.</p>
+<hr>
+</section>
+<section id="practical-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="practical-considerations">Practical Considerations</h3>
+<ul>
+<li>A short “burn-in” period may be needed to stabilize risk ratios before applying equity weights.</li>
+<li>Alternatively, historical assignment data can be used to initialize risk ratios.</li>
+<li>Administrators can monitor and adjust the weights dynamically as population needs and effectiveness change.</li>
+</ul>
+</section>
+</section>
+<section id="technical-challenges-and-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="technical-challenges-and-solutions">Technical Challenges and Solutions</h2>
+<p>Several technical challenges were addressed during this project:</p>
+<ol type="1">
+<li><p><strong>Data quality issues:</strong> Like many social service datasets, the homelessness data contained substantial missing values, particularly for exit destinations (69% unknown for non-intervention cases). This required careful handling to prevent biased estimates.</p></li>
+<li><p><strong>Causal inference:</strong> The observational nature of the data required careful consideration of selection bias. The programmatic design of housing intervention assignment provided a pseudo-randomization mechanism conditional on observable characteristics.</p></li>
+<li><p><strong>Dynamic optimization:</strong> The algorithm needed to respond to changing population compositions over time, requiring a burn-in period to establish stable risk ratios.</p></li>
+</ol>
+</section>
+<section id="policy-implications" class="level2">
+<h2 class="anchored" data-anchor-id="policy-implications">Policy Implications</h2>
+<p>This work has several important implications for homelessness policy:</p>
+<ol type="1">
+<li><p>Current HUD prioritization guidance may need revision to better align with the goal of maximizing successful exits from homelessness</p></li>
+<li><p>Machine learning approaches can significantly improve resource allocation efficiency, but must be carefully designed to avoid perpetuating inequities</p></li>
+<li><p>Continuous monitoring and adjustment of allocation algorithms is necessary to maintain equity as population compositions change</p></li>
+</ol>
+</section>
+<section id="acknowledgments" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>This analysis builds upon the work of Kube et al.&nbsp;(2023) on efficient allocation of homelessness resources. All data was provided by a large Continuum of Care through their Homelessness Management Information System (HMIS). Trevor Gratz ideated, scoped, developed the connection between optimizations and CATEs, created the penalized optimization algorithm, and wrote the associated paper. Anu Zan implemented the optimization algorithm and created Figure 3.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><p>Kube, A. R., Das, S., &amp; Fowler, P. J. (2023). Fair and efficient allocation of scarce resources based on predicted outcomes: implications for homeless service delivery. Journal of Artificial Intelligence Research, 76, 1219-1245.</p></li>
+<li><p>Auditor of the State of California (2024, April). Homelessness in California. Report 2023-102.1</p></li>
+<li><p>Chelmis, C., Qi, W., &amp; Lee, W. (2021, April). Challenges and opportunities in using data science for homelessness service provision. In Companion proceedings of the web conference 2021 (pp.&nbsp;128-135).</p></li>
+<li><p>Meyer, B. D., Wyse, A., &amp; Logani, I. (2023). Life and death at the margins of society: the mortality of the US homeless population. National Bureau of Economic Research.</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
