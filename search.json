@@ -186,14 +186,14 @@
     "href": "index.html#about-me",
     "title": "Trevor Gratz",
     "section": "About Me",
-    "text": "About Me\nI have a background in mathematics, statistics, and data science, and I’ve worked in academia and the public sector. I received my Bachelor of Science in Mathematics and Statistics in 2014 from the University of Washington, and my Master of Science in Data Analytics from Georgia Tech in August, 2025. I have over a decade of work experience in data analytics and am a co-author on over ten peer reviewed publications cited by over 500 journal articles. My work emphasizes:\n\nLanguages: Python, R, SQL, Stata\n\nLibraries/Frameworks: scikit-learn, pandas, NumPy, PyTorch, Geopandas, Statsmodels\n\nTools: git, Jupyter, VS Code\n\nTechniques: Machine Learning, Causal Inference, Optimization, Regression, Classification"
+    "text": "About Me\nI have a background in mathematics, statistics, and data science, and I’ve worked in academia and the public sector. I received my Bachelor of Science in Mathematics and Statistics in 2014 from the University of Washington, and my Master of Science in Data Analytics from Georgia Tech in August, 2025. I have over a decade of work experience in data analytics and am a co-author on over ten peer reviewed publications cited by over 500 journal articles."
   },
   {
     "objectID": "index.html#skills-summary",
     "href": "index.html#skills-summary",
     "title": "Trevor Gratz",
     "section": "Skills Summary",
-    "text": "Skills Summary\n\nLanguages: Python, R, SQL\nTools & Libraries: scikit-learn, pandas, NumPy, Pytorch, Matplotlib, Geopandas, Statsmodels, git\nTechniques: Machine Learning, Optimization, Causal Inference, Regression, Classification"
+    "text": "Skills Summary\n\nLanguages: Python, R, SQL, Stata\n\nLibraries/Frameworks: scikit-learn, pandas, NumPy, PyTorch, Geopandas, Statsmodels\n\nTools: git, Jupyter, VS Code\n\nTechniques: Machine Learning, Causal Inference, Optimization, Regression, Classification"
   },
   {
     "objectID": "index.html#featured-projects",
