@@ -1,0 +1,27 @@
+---
+title: "Projects"
+format: html
+page-layout: full
+---
+
+
+#### Diagnosing Chagas Diseases with Deep Convolutional Neural Networks
+
+Created a hybrid convolutional neural network plus transformer model to diagnoses Chagas disease from electrocardiogram data. 
+👉 [View Project ›](Chagas.qmd)
+
+---
+
+####  Prioritization and equitibale allocation of housing interventions for homeless houeholds
+
+Built upon existing literature to develop a weighted optimization algorithm that balances exiting the greatest number of households from homelessness while minimizing inequitable houseing resource allocation.
+
+👉 [View Project ›](Prioritization.qmd)
+
+---
+
+####  Mobile medication assisted therapy for substance use disorder treatment site location
+ 
+Worked with program managers to create an interactive application allowing for the exploration site locations based on historical overdose calls data. 
+
+👉 [View Project ›](RCT.qmd)

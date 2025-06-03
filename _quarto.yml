@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Trevor Gratz"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - Resume.qmd
+      - Publications.qmd
+      - Projects.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

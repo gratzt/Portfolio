@@ -1,0 +1,344 @@
+---
+title: "Using machine learning and optimization for resource planning: a case study in locating opioid use disorder treatment units"
+format: html
+---
+
+# Overview
+
+Opioid use disorder has been widely viewed as a growing public health emergency. Medication assisted therapy (MAT) is considered the gold standard for treating opioid use-disorder: MAT can reduce overdose mortalty by up to three fold. However, facilities that serve residents are often in urban settings, and MAT can be difficult to access outside of major metropolitan areas. Pierce County is addressing the needs of rural residence by provisioning mobile opioid use disorder treatment vans.  
+
+The analyses and tools presented here support the planning phase of rolling out mobile opioid-use-disorder van. It also supported the design process of a randomized controlled trial(RCT) of the effectiveness of mobile opioid-use-disorder vans on reducing substance abuse. Pierce County partnered with UC Santa Cruz to plan the RCT.  
+
+This application plots potential site locations for mobile opioid-use-disorder treatment vans, their location relative to the number of overdose 911 related calls, and their location relative to main road and transit. Potential sites have been clustered into high, medium, and low needs areas based on overdose call locations and accessibility.
+
+<iframe
+  src="https://odlocationcalls-fhv9mbksbcgsyjullanean.streamlit.app/?embed=true#middle-section"
+  height="600"
+  width="100%"
+  style="border:none;"
+  sandbox="allow-same-origin allow-scripts allow-forms"
+></iframe>
+
+## Key Findings 
+
+- Cluster analysis revealed three kinds of potential site: high call volume and high accessibility, medium call volume and medium accessibility, and low call volume and low accessibility. The site characteristics by cluster are depicted in Table 1 below.
+
+<br>
+
+**Table 1. Site Mean and Standard Deviation by Cluster**
+
+| Variable                     | Cluster 1 (Low)        | Cluster 2 (Medium)     | Cluster 3 (High)        |
+|------------------------------|------------------------|------------------------|------------------------|
+| Calls within 500 meters      | 0.2 (0.4)              | 1.1 (1.3)              | 3.4 (1.1)              |
+| Calls within 1,000 meters    | 0.6 (1.0)              | 3.9 (2.9)              | 17 (11.2)              |
+| Calls within 2,000 meters    | 1.6 (2.8)              | 9.5 (5.9)              | 40.4 (9.3)             |
+| Calls within 3,000 meters    | 3.0 (4.6)              | 17.1 (14.5)            | 61.6 (14.0)              |
+| Meters to transit            | 16,389 (17,925)        | 1,258 (1,975)          | 239 (224)              |
+| Meters to closest major road | 1,269 (1,747)          | 481 (626)              | 184 (100)              |  
+
+<br>
+
+- Outside of Tacoma, overdose calls and accessibility were highest along the highway 7 and WA route 161 corridors. This is evidenced from the calls data themselves, but also the categorization of potential sites along these corridors into cluster 3.
+
+## Data Sources
+
+- 2023 South Sound 911 Overdose Calls 
+- Pierce County data on:
+  - Fire stations
+  - Libraries
+  - Safe Parking sites
+  - Roads
+  - Bus stops
+- Fixed MAT Locations
+
+## The Goods: Methods
+
+### Building the application for data-informed decision making
+Subject matter experts at Pierce County Human Services identified fire stations, libraries, and safe parking sites as potential partners for locating a mobile opioid use-disoreder van on the premesis. For each potential site i, I calculated the number of calls within 500, 1000, 2000, and 3000 meters. Because we want to prioritize potential sites with ease of access, I also calculate the distance to the closest bus stop and major road. I omitted sites in the City of Tacoma due to it's high presence of fixed MAT location and greater access to services.
+
+After applying a standard scalar feature normalization I performed K-means clustering on the feature set. K-means applies equal weighting to all features. However, from the context it is clear that the proximity of overdose calls to potential sites is more relevant than access to the site alone. The multiple features for the number of calls within different specified radii of the site increase the relative importance of the number of calls nearby, as well as capture information from different ranges of distance to sites.  
+
+The site information, datasets, and clustering algorithm were packaged and ported into the Streamlit applicaiton. This allows the user to explore potential sites other than the pre-calculated sites at fire statations, libraries and safe parking. 
+
+This application alone was sufficient to help Pierce County Human Service's program managers think through the implications of different site locations. However, it is unable to help researchers think through the implications of site selection on statistical power.
+
+### Site Selection and Power Analysis for Block-Randomized Trials: A Problem of Search
+
+This methodology outlines a systematic approach to selecting experimental sites for a block-randomized trial in order to maximize statistical power while minimizing the risk of treatment spillover between sites. The statistical framework is based on the model of one treated unit per block with potentially multiple control units, following the approach of Pashley and Miratrix (2021). Power is calculated using pre-treatment outcome data to estimate within-block variances, and is directly linked to minimizing the variance of the treatment effect estimator. Key assumptions include homoskedasticity within blocks, independence between treatment and control units, and block-level heterogeneity in variance.
+
+To operationalize site selection, a three-stage approach is developed. First, the method uses integer programming to select the largest possible number of sites that satisfy a minimum distance constraint, preventing spillover. Second, k-means clustering is applied to group selected sites into blocks with similar pre-treatment outcome values, minimizing within-block variance. Finally, statistical power is calculated based on this block structure using standard power formulas. This approach balances competing design goals: maximizing sample size, ensuring spatial independence, and minimizing outcome variance, ultimately yielding a more efficient and robust trial design.
+
+
+::: {.callout-note collapse="true"}
+## Technical Details: Statistical Framework and Implementation
+
+### 1. Introduction
+
+This document outlines the methodology used to select sites so as to maximize statistical power. This report begins by discussing the statistical model used in a block-randomized trial with exactly one treated unit per block and potentially multiple control units, where block sizes may be unbalanced. The approach leverages pre-treatment data to estimate variance components and follows the framework established by Pashley and Miratrix (2021) for calculating power. It discusses the potential of spillover effects in a spatial randomization, and develops a methodology to maximize statistical power while minimizing the potential for spillover. 
+
+### 2. Statistical Model
+
+The basic model for a block-randomized trial can be expressed as:
+
+$$Y_{ik} = \alpha_k + \tau Z_{ik} + \varepsilon_{ik}$$
+
+Where:
+- $Y_{ik}$ is the outcome for unit $i$ in block $k$
+- $\alpha_k$ is the block-specific fixed effect
+- $\tau$ is the treatment effect (our parameter of interest)
+- $Z_{ik}$ is the treatment indicator (1 for treatment, 0 for control)
+- $\varepsilon_{ik}$ is the random error term
+
+### 3. Estimation of Treatment Effect
+
+Following Pashley and Miratrix (2021), the blocked estimator of the average treatment effect is:
+
+$$\hat{\tau}_{(BK)} = \sum_{k=1}^{K} \frac{n_k}{n} \hat{\tau}_k$$
+
+Where:
+- $K$ is the total number of blocks
+- $n_k$ is the number of units in block $k$ (including both treated and control)
+- $n = \sum_{k=1}^{K} n_k$ is the total sample size
+- $\hat{\tau}_k$ is the estimated treatment effect within block $k$
+
+For our design with exactly one treated unit per block, $\hat{\tau}_k$ is:
+
+$$\hat{\tau}_k = Y_k^T - \bar{Y}_k^C$$
+
+Where $Y_k^T$ is the outcome for the treated unit in block $k$ and $\bar{Y}_k^C$ is the mean outcome for the control units in block $k$.
+
+### 4. Variance of the Treatment Effect Estimator
+
+[Pashley and Miratrix](https://journals.sagepub.com/doi/full/10.3102/1076998620946272) (2021) provide the variance formula for the blocked estimator in their Equation (2). Adapting this for our specific case with one treated unit per block and assuming independence between treatment and control units within blocks:
+
+$$Var(\hat{\tau}_{(BK)}) = \sum_{k=1}^{K} \left(\frac{n_k}{n}\right)^2 Var(\hat{\tau}_k)$$
+
+Within each block, the variance of the block-specific treatment effect is:
+
+$$Var(\hat{\tau}_k) = Var(Y_k^T) + Var(\bar{Y}_k^C) = \sigma_k^2 + \frac{\sigma_k^2}{n_k^C}$$
+
+Where:
+- $\sigma_k^2$ is the variance of outcomes within block $k$
+- $n_k^C = n_k - 1$ is the number of control units in block $k$
+
+Simplifying:
+
+$$Var(\hat{\tau}_k) = \sigma_k^2\left(1 + \frac{1}{n_k^C}\right) = \sigma_k^2\left(\frac{n_k^C + 1}{n_k^C}\right) = \sigma_k^2\left(\frac{n_k}{n_k - 1}\right)$$
+
+Therefore, the variance of our treatment effect estimator is:
+
+$$Var(\hat{\tau}_{(BK)}) = \sum_{k=1}^{K} \left(\frac{n_k}{n}\right)^2 \sigma_k^2\left(\frac{n_k}{n_k - 1}\right) = \sum_{k=1}^{K} \frac{n_k^3}{n^2(n_k - 1)}\sigma_k^2$$
+
+
+For this analysis, we make the following assumptions:
+
+1. **Homoskedasticity within blocks**: The variance of outcomes is constant within each block (i.e., treated and control units have the same variance within a block). This assumption is necessary as we have no pre-treatment data on treated outcomes with which to estimate the variance.
+
+2. **Independence**: Treatment and control outcomes are independent within blocks, conditional on block membership.
+
+3. **Block-specific heterogeneity**: The variance can differ across blocks (i.e., $\sigma_k^2$ can vary with $k$).
+
+4. **Treatment affects means only**: The treatment affects the mean of the outcome but not its variance.
+
+5. **Pre-treatment data is sufficient to estimate outcome variance post-treatment**: The estimation of statistical power, as shown in in section 6, relies on an accurate estimation of the variance of our treatment effect. 
+
+### 5. Estimation of Variance Components from Pre-treatment Data
+
+We can leverage pre-treatment outcome data to estimate the variance components required for power analysis:
+
+$$\hat{\sigma}_k^2 = \frac{1}{n_k-1} \sum_{i=1}^{n_k} (Y_{ik,pre} - \bar{Y}_{k,pre})^2$$
+
+Where:
+- $Y_{ik,pre}$ is the pre-treatment outcome for unit $i$ in block $k$
+- $\bar{Y}_{k,pre}$ is the mean pre-treatment outcome in block $k$
+
+These estimates can then be substituted into the variance formula:
+
+$$\widehat{Var}(\hat{\tau}_{(BK)}) = \sum_{k=1}^{K} \frac{n_k^3}{n^2(n_k - 1)}\hat{\sigma}_k^2$$
+
+### 6. Power Calculation
+
+For a given significance level $\alpha$ (typically 0.05) and a minimum detectable effect size $\delta$, the [power](https://chabefer.github.io/STCI/Power.html#basics-of-traditional-power-analysis-using-test-statistics) of the test is:
+
+$$Power = 1 - \beta = \Phi\left(\frac{|\delta|}{\sqrt{\widehat{Var}(\hat{\tau}_{(BK)})}} - z_{1-\alpha/2}\right)$$
+
+Where:
+- $\Phi$ is the cumulative distribution function of the standard normal distribution
+- $z_{1-\alpha/2}$ is the critical value (e.g., 1.96 for $\alpha = 0.05$ with a two-sided test)
+
+Alternatively, to determine the required sample size for a desired power level $1-\beta$, we need to solve:
+
+$$\frac{|\delta|}{\sqrt{\widehat{Var}(\hat{\tau}_{(BK)})}} - z_{1-\alpha/2} = z_{1-\beta}$$
+
+Which gives:
+
+$$\widehat{Var}(\hat{\tau}_{(BK)}) = \frac{\delta^2}{(z_{1-\alpha/2} + z_{1-\beta})^2}$$
+
+We can then determine how many blocks or how many units per block would be needed to achieve this target variance.
+
+### 7. Optimizing Power and Preventing Spill Over
+
+Our goal is to select sites to maximize statisticl power, while ensuring there is no spill over of treatment effects between sites. We can minimize the potential of spill over effects by ensuring all selected sites are at a minimum of X meters away from each other. The optimization progam is formed as follows:
+
+Let:
+- $S_{i,k}$ be a 0/1 indicator for whether site $i$ is in block $k$
+- $(L_{i,1}, L_{i, 2})$ be the coordinates of site $i$ in a projection (EPSG:6559) such that the euclidian distance between two coordinates is meters
+- $D_{min}$ be the minimum distance two sites must be apart for spill over to be neglegble
+
+The objective function is:
+
+$$ argmax_{S_{i,g}} \Phi\left(\frac{|\delta|}{\sqrt{\widehat{Var}(\hat{\tau}_{(BK)})}} - z_{1-\alpha/2}\right)$$
+
+Subject to:
+
+$$ \sum_{g} S_{i,g} \leq 1 \quad \forall i $$
+
+$$\sqrt{(L_{i,1}-L_{j,1})^2 + (L_{i,2}-L_{j,2})^2} \geq (\sum_{g} S_{i,g})(\sum_{g} S_{j,g})D_{min} \quad \forall i, j \quad if \: i\neq j   $$
+
+Here the first constraint ensures each site can belong to only one block at most. The second constraint requires selected sites only to be at least $D_{min}$ meters away from each other. 
+
+This optimiztion problem is constrained, highly non-linear, and is a mixed binary and continous problem. It not tractable with existing methods. However, examining the factors that influence the power calculation can yield insight into how to design an approach that may approximate site selection for maximal power. Specifically, power be maximized when the variance of the treatment effect estimator is minimized. Examining the formula for the treatment effect varience shows that it is minimized when sample sizes increase and when the within-block variances are minimized. Unfortunately, increasing sample sizes and minimizing within-block variance may not always be compatible. In section 9 below we detail an approach that weighs tradeoffs between maximizing sample size and minimizing within-block variance while ensure negligille spill over.    
+
+### 8. Three Stage Approach to Maximizing Power
+
+
+Our approach to maximizing power while preventing spillover effects combines three stages:
+
+#### Stage 1: Maximize Site Selection with Minimum Distance Constraints
+
+In the first stage, we select the maximum number of sites that satisfy the distance constraint to prevent spillover effects while also filter to sites within pre-specified ranges of the outcome variable of interest. For example, we filter to all sites with more than 10 calls within 3,000 meters in a year. This filtering is aimed at reducing within-block variance prior to site selection, as the site selection process itself is ignorant of within-block variance. After prefiltering, we solve for the maximum number of sites. 
+
+This optimization is formulated as an integer programming problem:
+
+Let $S$ be the set of all potential sites, and for each site $i \in S$:
+- $S_i$ is a binary indicator variable where $S_i = 1$ if site $i$ is selected, and $S_i = 0$ otherwise
+- $D_{i,j}$ is a binary indicator where $D_{i,j} = 1$ if the distance between sites $i$ and $j$ is greater than the minimum required distance (or if $i = j$), and $D_{i,j} = 0$ otherwise. This reformulation removes the square-root constraint seen in section 7 and recasts the problem as a linear program.
+
+The optimization problem is:
+
+$$\text{maximize } \sum_{i \in S} S_i$$
+
+Subject to:
+$$S_i + S_j \leq D_{i,j} + 1 \quad \forall i,j \in S$$
+
+This constraint ensures that if two sites $i$ and $j$ are both selected ($Z_i = Z_j = 1$), then they must be sufficiently far apart ($D_{i,j} = 1$). The constarint cannot be satisfied if both are selected and are too close.
+
+#### Stage 2: Assign Sites to Blocks Using K-means Clustering
+
+Once we have selected the maximum number of eligible sites, we assign them to blocks to minimize within-block variance. For a design with exactly one treated unit per block, power is maximized when the within-block variance is minimized.
+
+We use k-means clustering on the outcome variable to achieve this, where $k$ equals the number of desired blocks:
+
+1. Initialize $k$ centroids randomly from the outcome values of selected sites
+2. Assign each site to the nearest centroid based on the absolute difference in outcome values
+3. Recalculate centroids as the mean of outcome values in each cluster
+4. Repeat steps 2-3 until convergence
+
+For one-dimensional clustering (i.e., clustering on a single outcome variable), the k-means loss function is:
+
+$$\sum_{k=1}^{K} \sum_{i \in C_k} (Y_i - \mu_k)^2$$
+
+Where:
+- $C_k$ is the set of sites assigned to block $k$
+- $Y_i$ is the outcome value for site $i$
+- $\mu_k$ is the mean outcome value for block $k$
+
+This loss function is directly related to minimizing the within-block variance, as the within-block variance for block $k$ is:
+
+$$\sigma_k^2 = \frac{1}{n_k-1} \sum_{i \in C_k} (Y_i - \mu_k)^2$$
+
+Therefore, minimizing the k-means loss function effectively minimizes the within-block variance, which maximizes power according to our variance formula in Section 4.
+
+After k-means clustering, we ensure each block has at least two sites (one treated, one control) by reassigning sites from larger blocks to smaller ones if necessary, based on outcome value similarity.
+
+#### Stage 3: Calculate Power Based on Block Assignment
+
+With the blocks established, we can calculate the power of our design using the formula from Section 6:
+
+$$\text{Power} = 1 - \beta = \Phi\left(\frac{|\delta|}{\sqrt{\widehat{\text{Var}}(\hat{\tau}_{(BK)})}} - z_{1-\alpha/2}\right)$$
+
+Where the variance of the treatment effect estimator is:
+
+$$\widehat{\text{Var}}(\hat{\tau}_{(BK)}) = \sum_{k=1}^{K} \frac{n_k^3}{n^2(n_k - 1)}\hat{\sigma}_k^2$$
+
+And $\hat{\sigma}_k^2$ is estimated from the pre-treatment outcome data:
+
+$$\hat{\sigma}_k^2 = \frac{1}{n_k-1} \sum_{i=1}^{n_k} (Y_{ik} - \bar{Y}_{k})^2$$
+
+The treatment effect size $\delta$ can be specified either as a fixed value or as a percentage of the average outcome across selected sites.
+
+#### Implementation Considerations
+
+Key considerations for implementation include:
+
+1. **Filtering criteria**: We apply filtering criteria to sites before stage 1 to ensure all candidate sites meet minimum requirements.
+
+2. **Minimum selected sites**: We require at least twice the number of blocks to be selected (to have at least one control unit per block). If fewer sites are selected, an error is raised.
+
+3. **Block balance**: We enforce a minimum of two sites per block, which ensures we have at least one control unit per block.
+
+4. **Distance calculation**: Pairwise distances between sites are calculated using their geographic coordinates, typically in a projected coordinate system where Euclidean distance corresponds to meters.
+
+5. **Significance level**: A standard significance level of α = 0.05 is typically used, corresponding to a critical value of $z_{1-\alpha/2} = 1.96$ for a two-sided test.
+
+By following this three-stage approach, we maximize power by selecting the maximum number of sites subject to distance constraints and optimally assigning them to blocks to minimize within-block variance, while maintaining the ability to detect a specified treatment effect size with high probability.
+
+
+### 9 Assumptions
+| **Assumption**                     | **Role in Power Formula**                                                                 | **Risk if Violated**                                                                                       |
+|-----------------------------------|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Normality of the estimator**    | Justifies use of the standard normal distribution ($\Phi$) for computing power.           | Power estimates may be inaccurate, especially if the number of blocks is small or outcome distributions are skewed. |
+| **Accurate variance estimation**  | Required to plug into the denominator of the standardized effect size ($\delta / \sqrt{Var}$). | Under- or overestimation of variance leads to over- or underestimation of power.                             |
+| **Independence within blocks**    | Ensures that variance components add properly; needed for block-specific variance formulas. | Correlated outcomes (e.g., due to interference or spillovers) can underestimate variance and inflate power. |
+| **Homoskedasticity within blocks**| Assumes treated and control units within the same block have the same outcome variance.    | If treatment changes variability, the variance formula for $\hat{\tau}_k$ is invalid.                        |
+| **Constant treatment effect**     | Assumes a fixed treatment effect $\delta$ for the power calculation.                      | If effects vary across units/blocks, power calculations may not reflect the true ability to detect effects. |
+| **Correct $\alpha$ and $\beta$**  | Determines critical values ($z_{1-\alpha/2}$, $z_{1-\beta}$) used in the power formula.   | Wrong values lead to incorrect inference thresholds (e.g., too lenient or too strict).                      |
+| **No covariate adjustment**       | Matches the unadjusted variance formula derived from the block-only design.               | If covariates are used in analysis but not in the power calculation, power may be underestimated.           |
+
+
+### 10. Implementation
+
+For the results presented here, the parameters were:
+
+  - Outcome variable: Overdose calls within 3,000 meters
+  - $D_{min}$: 6,000 meters
+  - Filter variable: Overdose calls within 3,000 meters
+  - Filter Threshold: Iterated over a minimum threshold starting at 0 and ending at 20 calls
+  - Effect size: 15\% of the selected site mean
+  - Number of blocks: 4 
+
+
+### 11. Findings
+
+Figure 1 below depicts the power calculations for selected sites based on the threshold minimum. 
+
+<img src="images\power_analysis_plot.png" alt="Figure 1" width="50%">
+
+<br>
+
+While there is arrangement of sites with a power level greater than 80\%, the analyses here represent a upper bound on the power calculations. This analysis is an upper bound on the power calculation because a number of key assumptions are likely violated. For instance, with only 4 blocks the normality of the estimator is unlikely to hold. Furthermore, the scenario where the power reached more than 80% had only 10 total sites selected. This means at most 3 sites per block were used to inform the estimate of the within-block variance. 
+
+Figure 2 below plots the number of sites selected on the x-axis, the average within-block variance on the y-axsis, and a gradient and marker size value for the power with larger and redder markers indicating greater power.  
+
+<img src="images\variance_nsites_power.png" alt="Figure 1" width="50%">
+
+<br>
+
+What is clear from figure 2 is that the arrangements with the highest power are driven almost entirely by reductions in the within-block variance. This combined with the low-sample sizes is concerning, since it could indicate our algorithm is overfitting. The low block sample sizes means our process for selecting blocks after site selection is likely underestimating the true within-block variance. 
+
+That being said, the sites that are selected do possess several desirable qualities. They are geographically distant from one another (see figure 3), have higher call volumnes than the average site, and have low-within block variance. 
+
+
+<img src="images\best_power_sites.png" alt="Figure 1" width="50%">
+:::
+
+## Next Steps
+
+- Containerize with Docker and deploy via AWS
+- Consider alternative RCT design. If applicable, create [synthetic](https://link.springer.com/article/10.3758/s13428-021-01546-0) data and run power calculations. 
+
+## References
+
+National Academies of Sciences, Engineering, and Medicine. (2018). Medication-Assisted Treatment for Opioid Use Disorder.
+
+Pashley, N. E., & Miratrix, L. W. (2021). Insights on Variance Estimation for Blocked and Matched Pairs Designs. *Journal of Educational and Behavioral Statistics*, 46(3), 271-296.

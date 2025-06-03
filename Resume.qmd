@@ -1,0 +1,189 @@
+---
+title: "Trevor Gratz"
+subtitle: "Senior Data Scientist"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    mainfont: 'Source Sans Pro, sans-serif'
+    fontsize: 1em
+    linestretch: 1.6
+    page-layout: full
+    toc: false
+---
+
+::: {.column-page}
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-8}
+## Professional Summary
+
+Senior data scientist with over a decade of experience in public sector analytics, statistical modeling, and data system design. Proven success in interdisciplinary collaboration, publication, and implementing production-grade tools to support government decision-making.
+:::
+
+::: {.g-col-12 .g-col-md-4 .contact-info}
+Seattle, Washington  
+[(206) 948-2815](tel:2069482815)  
+[github.com/gratzt](https://github.com/gratzt){target="_blank"}
+:::
+
+:::
+
+## Experience
+
+### Senior Data Scientist (Acting Lead) {.job-title}
+**Pierce County Finance, Research and Data Analysis** | Tacoma, WA | *March 2022 – Present*
+
+::: {.job-description}
+- Led interdisciplinary efforts with Human Services, IT Engineering, Legal, and external providers to design new data collection systems supporting $30 million in contracted behavioral health services
+- Developed a geospatial unsupervised clustering algorithm for opioid treatment location planning; built an interactive data exploration portal to support project management
+- Ideated and scoped projects determining appropriate inferential statistical methods to drive decision-making for key stakeholders, including the County Executive, Director of Finance, Director of Human Services, Director of Planning and Public Works, and Prosecuting Attorney
+- Mentored analysts on code structure, distributed workflows, and version control; guided Git adoption across the team
+:::
+
+### Data Scientist {.job-title}
+**University of Washington, Center for Education Data and Research** | Seattle, WA | *June 2018 – December 2021*
+
+::: {.job-description}
+- Integrated health and education datasets using probabilistic record linkage; co-authored the first peer-reviewed study of Washington's school nurse workforce
+- Translated ambiguous research goals into published findings, including a fixed-effects Poisson model analyzing online education enrollment trends
+- Conducted analysis of a randomized controlled trial using randomized block design to assess student teaching outcomes
+:::
+
+### Data Analyst {.job-title}
+**University of Washington, Center for Education Data and Research** | Seattle, WA | *September 2014 – May 2018*
+
+::: {.job-description}
+- Managed administrative and ad hoc datasets; contributed to over 10 peer-reviewed publications with 400+ citations
+- Applied causal inference methods (e.g., difference-in-differences) to evaluate the impact of financial aid programs, resulting in three peer-reviewed publications
+:::
+
+## Skills {.section-header}
+
+::: {.skills-container}
+::: {.skill-category}
+**Languages & Tools**  
+Python (pandas, scikit-learn, PyTorch, statsmodels, matplotlib), R, SQL, Stata, Git
+:::
+
+::: {.skill-category}
+**Techniques**  
+Regression, Classification, Deep Learning, NLP, Clustering, Causal Inference, Geospatial Analysis, EDA, Model Evaluation
+:::
+
+::: {.skill-category}
+**Frameworks**  
+Supervised & Unsupervised Learning, Distributed Workflows, Reproducible Research
+:::
+:::
+
+## Education {.section-header}
+
+### Master of Science in Data Analytics {.degree}
+**Georgia Institute of Technology** | Atlanta, GA | *Expected August 2025*
+
+### Master of Nursing {.degree}
+**Pacific Lutheran University** | Tacoma, WA | *August 2019*
+
+### Bachelor of Science in Mathematics & Statistics {.degree}
+**University of Washington** | Seattle, WA | *March 2014*
+
+:::
+
+```{=html}
+<style>
+/* Custom CSS for the resume */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --border-color: #e9ecef;
+}
+
+body {
+  color: var(--text-color);
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+}
+
+h1.title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+h2.subtitle {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  text-align: right;
+  font-size: 1rem;
+  color: var(--primary-color);
+  line-height: 1.8;
+}
+
+.section-header, h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.job-title, .degree {
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.job-description, .education-details {
+  margin-left: 0;
+  margin-top: 0.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  flex: 1;
+  min-width: 300px;
+}
+
+.skill-category strong {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  .skills-container {
+    flex-direction: column;
+  }
+}
+</style>
+```

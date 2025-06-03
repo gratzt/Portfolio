@@ -1,0 +1,39 @@
+---
+title: "Publications"
+---
+
+## Peer-Reviewed Publications
+
+
+1. Goldhaber, D., Ronfeldt, M., Cowan, J., Bardelli, E., Gratz, T., Truwit, M. (2025). "Clinical Experiences and (Unexpected Findings on) Job Placements: Experimental Evidence from Student Teaching Interventions." *CALDER Working Paper No. 312-0325* [Free Working Paper Version](https://caldercenter.org/publications/clinical-experiences-and-unexpected-findings-job-placements-experimental-evidence)
+
+
+2. Goldhaber, D. & Gratz, T. (2023). "School District Staffing Challenges in a Rapidly Recovering Economy." *Washington Educational Research Association Educational Journal-Volume 15.* [Free Working Paper Version](https://caldercenter.org/publications/school-district-staffing-challenges-rapidly-recovering-economy)
+
+3. Gratz, T., Goldhaber, D., & Brown, N. (2022). "The Pre-Pandemic Growth in Online Public Education and the Factors that Predict It." *Journal of School Choice: International Research and Reform* [Free Working Paper Version](https://www.cedr.us/_files/ugd/1394b9_82955cd5b86e4176a01b07e219f5888b.pdf)
+
+4. Goldhaber, D., Ronfeldt, M., Cowan, J., Gratz, T., Bardelli, E., & Truwit, M. (2022). "Room for improvement? Mentor teachers and the evolution of teacher preservice clinical evaluations." *American Educational Research Journal* [Free Open Access Paper](https://journals.sagepub.com/eprint/FCIYWXTHI9HWPW5PHFBK/full)
+
+5. Gratz, T., Goldhaber, D., Willgerodt, M., & Brown, N. (2021). "The Front-Line Health Care Workers in Schools: Health Equity, the Distribution of School Nurses, and Student Access." *The Journal of School Nursing.* [Free Working Paper Version](https://www.cedr.us/_files/ugd/1394b9_509ab3f4cf2543c29a9fada638b3ef29.pdf)
+
+6. Theobald, R., Plasman, J., Gottfried, M., Gratz, T., Holden, K., & Goldhaber, D. (2021). "Sometimes less, sometimes more: Trends in career and technical education participation for students with disabilities." *Educational Researcher.* [Free Working Paper Version](https://caldercenter.org/publications/sometimes-less-sometimes-more-trends-career-and-technical-education-participation)
+
+7. Long, M., Goldhaber, D., & Gratz, T. (2020). "Washington's College Bound Scholarship Program and its Effect on College Entry, Persistence, and Completion." *Education Finance and Policy.* [Free Working Paper Version](https://caldercenter.org/publications/washingtons-college-bound-scholarship-program-and-its-effect-college-entry-persistence)
+
+8. Goldhaber, D., Long, M., Gratz, T., & Rooklyn, J. (2019). "Pledging to Do 'Good': An Early Commitment Pledge Program, College Scholarships, and High School Outcomes in Washington State." *Educational Evaluation and Policy Analysis.* [Free Working Paper Version](https://caldercenter.org/publications/pledging-do-good-early-commitment-pledge-program-college-scholarships-and-high-school)
+
+9. Goldhaber, D., Long, M. C., Person, A. E., Rooklyn, J., & Gratz, T. (2019). "Sign Me Up: The Factors Predicting Students' Enrollment in an Early-Commitment Scholarship Program." *AERA Open.* [Free Open Access Paper](https://journals.sagepub.com/doi/full/10.1177/2332858419857703)
+
+10. Theobald, R., Goldhaber, D., Gratz, T., & Holden, K. (2018). "High school English Language Arts teachers and postsecondary outcomes for students with and without disabilities." *Journal of Disability Policy Studies.* [Free Working Paper Version](https://caldercenter.org/publications/high-school-english-language-arts-teachers-and-postsecondary-outcomes-students-and)
+
+11. Theobald, R., Goldhaber, D., Gratz, T., & Holden, K. (2018). "Career and Technical Education, Inclusion, and Postsecondary Outcomes for Students With Learning Disabilities." *Journal of learning disabilities.* [Free Working Paper Version](https://caldercenter.org/publications/career-and-technical-education-inclusion-and-postsecondary-outcomes-students)
+
+12. Goldhaber, D., Gratz, T., & Theobald, R. (2017). "What's in a teacher test? Assessing the relationship between teacher licensure test scores and student STEM achievement and course-taking." *Economics of Education Review.* [Free Working Paper Version](https://caldercenter.org/publications/whats-teacher-test-assessing-relationship-between-teacher-licensure-test-scores-and)
+
+13. Pfeiffer, L., & Gratz, T. (2016). "The effects of rights-based fisheries management on risk taking and fishing safety." *Proceedings of the National Academy of Sciences.* [Free Open Access Paper](https://www.pnas.org/doi/10.1073/pnas.1509456113)
+
+## Other Publications
+
+14. [Diagnosing Chagas Disease with Deep Neural Networks](reports/ChagasDx.pdf)
+
+15. [Examining HUD Housing Policy Through The Potential Outcomes Model](reports/EquitableInterventionAllocation.pdf)
