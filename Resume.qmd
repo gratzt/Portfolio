@@ -37,7 +37,7 @@ Seattle, Washington
 ::: {.job-description}
 - Led interdisciplinary efforts with Human Services, IT Engineering, Legal, and external providers to design new data collection systems supporting $30 million in contracted behavioral health services
 - Developed a geospatial unsupervised clustering algorithm for opioid treatment location planning; built an interactive data exploration portal to support project management
-- Ideated and scoped projects determining appropriate inferential statistical methods to drive decision-making for key stakeholders, including the County Executive, Director of Finance, Director of Human Services, Director of Planning and Public Works, and Prosecuting Attorney
+- Ideated and scoped projects to determine appropriate inferential statistical methods to drive decision-making for key stakeholders, including the County Executive, Director of Finance, Director of Human Services, Director of Planning and Public Works, and Prosecuting Attorney
 - Mentored analysts on code structure, distributed workflows, and version control; guided Git adoption across the team
 :::
 

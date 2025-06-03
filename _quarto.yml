@@ -9,7 +9,7 @@ website:
         text: Home
       - Resume.qmd
       - Publications.qmd
-      - Projects.qmd
+      #- Projects.qmd
 
 format:
   html:

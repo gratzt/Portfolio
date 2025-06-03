@@ -6,7 +6,7 @@ format: html
 ## 📌 TL;DR
 
 - Built and trained a deep neural network (1D CNN) to detect Chagas disease from ECG signals.
-- Achieved AUROC of 0.84 on unseen data.
+- Achieved an Area Under the Receiver Operating Characteristic Curve (AUROC) of 0.84 on unseen data.
 - Deployed an interactive app to test predictions on user-uploaded ECGs.
 - Applied best practices in deep learning, model evaluation, and deployment.
 
@@ -16,11 +16,11 @@ Chagas disease is a parasitic illness transmitted by insects, affecting an estim
 
 This project builds on the work of Jidling et al. (2023), who developed a convolutional neural network (CNN) to detect Chagas disease using electrocardiogram (ECG) data. Expanding on their approach, I incorporate the sequential nature of ECG signals by designing a hybrid deep learning model that combines convolutional and transformer architectures. This enhancement significantly improves diagnostic performance: on the validation set, the area under the receiver operating characteristic curve (AUC-ROC) increases from 0.80 with the CNN alone to 0.84 with the combined model. Improving early detection of undiagnosed cases could lead to life-saving interventions for hundreds of patients.  
 
-On this page you will find the hybrid model is embedded below. It is followed by a detailed schematic of the architecture and a write-up of this project, which was inspired by the PhysioNet 2025 challenge. 
+Below, you'll find an embedded version of the hybrid model. It is followed by a detailed schematic of the architecture and a write-up of this project, which was inspired by the PhysioNet 2025 challenge. 
 
 ## 🔍 Try It Yourself
 
-Upload your own ECG input to see predictions from the trained deep learning model. Don't have ECG data lying around, try out this CODE-15 and SaMi-Trop [sample](Sample_Data.zip). 
+Upload your own ECG input to see predictions from the trained deep learning model. Don't have ECG data on hand? Try this sample from CODE-15 and SaMi-Trop: [sample](Sample_Data.zip). 
 
 <iframe
   src="https://chagasprediction-hcgebjyfafrfk5nzeeb37b.streamlit.app/?embed=true#middle-section"
@@ -32,7 +32,7 @@ Upload your own ECG input to see predictions from the trained deep learning mode
 
 ## Results
 
-Figure 1 below plots the loss curves for the training and validation set by epoch. The validation loss and AUROC scores plateaus by the 6th epoch. Nevertheless, the validation AUROC achieved state of the art results for diagnosing Chagas disease. The best AUROC validation score was 0.84, which constitutes a significant improvement over the 0.80 AUROC score in the convolution only model explored in Jidling et al. (2023). 
+Figure 1 below plots the loss curves for the training and validation set by epoch. The validation loss and AUROC scores plateau by the 6th epoch. Nevertheless, the validation AUROC achieved state-of-the-art results for diagnosing Chagas disease. The best AUROC validation score was 0.84, which constitutes a significant improvement over the 0.80 AUROC score in the convolution only model explored in Jidling et al. (2023). 
 
 **Figure 1:** Loss and AUROC curves demonstrate stable training and generalization over 10 epochs.
 
@@ -54,13 +54,13 @@ The training metrics suggest good model convergence without signs of overfitting
 
 
 
- The model achieves a recall of 0.72 and a precision of 0.78. For the purposes of medical diagnosing, a false negative (i.e. telling a patient they are Chagas-free when in fact they have Chagas) is typically considered a worse error to make. The threshold on this model could be lowered to lower the incidence of false negatives. The implications of this would be to increase false positives, lower precision, but to increase recall.
+ The model achieves a recall of 0.72 and a precision of 0.78. In clinical contexts, a false negative (i.e., informing a patient they are Chagas-free when they are not) is typically considered a worse error to make. The threshold on this model could be lowered to lower the incidence of false negatives. The implications of this would be to increase false positives, lower precision, but to increase recall.
 
 ## Methods
 
 The model is a 1D CNN optimized for time-series ECG data. It extracts temporal patterns in raw signals to distinguish Chagas-positive and negative cases with high performance.
 
-Figure 2 below displays the architecture used to diagnos Chagas disease. For a full discussion of the experiments and their results, please read the following [paper]('reports/ChagasDx.pdf'). 
+Figure 2 below displays the architecture used to diagnose Chagas disease. For a full discussion of the experiments and their results, please read the following [paper](reports/ChagasDx.pdf). 
 
 **Figure 2:** 1D Convolutional Neural Network architecture for ECG signal classification.
 
