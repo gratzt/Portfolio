@@ -150,7 +150,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
   <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
-  <li><a href="#the-goods-methods" id="toc-the-goods-methods" class="nav-link" data-scroll-target="#the-goods-methods">The Goods: Methods</a>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
   <li><a href="#building-the-application-for-data-informed-decision-making" id="toc-building-the-application-for-data-informed-decision-making" class="nav-link" data-scroll-target="#building-the-application-for-data-informed-decision-making">Building the application for data-informed decision making</a></li>
   <li><a href="#site-selection-and-power-analysis-for-block-randomized-trials-a-problem-of-search" id="toc-site-selection-and-power-analysis-for-block-randomized-trials-a-problem-of-search" class="nav-link" data-scroll-target="#site-selection-and-power-analysis-for-block-randomized-trials-a-problem-of-search">Site Selection and Power Analysis for Block-Randomized Trials: A Problem of Search</a></li>
@@ -185,15 +185,15 @@ window.Quarto = {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>Opioid use disorder has been widely viewed as a growing public health emergency. Medication assisted therapy (MAT) is considered the gold standard for treating opioid use-disorder: MAT can reduce overdose mortalty by up to three fold. However, facilities that serve residents are often in urban settings, and MAT can be difficult to access outside of major metropolitan areas. Pierce County is addressing the needs of rural residence by provisioning mobile opioid use disorder treatment vans.</p>
-<p>The analyses and tools presented here support the planning phase of rolling out mobile opioid-use-disorder van. It also supported the design process of a randomized controlled trial(RCT) of the effectiveness of mobile opioid-use-disorder vans on reducing substance abuse. Pierce County partnered with UC Santa Cruz to plan the RCT.</p>
-<p>This application plots potential site locations for mobile opioid-use-disorder treatment vans, their location relative to the number of overdose 911 related calls, and their location relative to main road and transit. Potential sites have been clustered into high, medium, and low needs areas based on overdose call locations and accessibility.</p>
+<p>Opioid use disorder has been widely viewed as a growing public health emergency. Medication-assisted therapy (MAT) is considered the gold standard for treating opioid use-disorder: MAT can reduce overdose mortality by up to three fold. However, facilities that serve residents are often in urban settings, and MAT can be difficult to access outside of major metropolitan areas. Pierce County is addressing the needs of rural residents by provisioning mobile opioid use disorder treatment vans.</p>
+<p>The analyses and tools presented here support the planning phase of rolling out a mobile opioid use disorder van. It also supported the design process of a randomized controlled trial (RCT) of the effectiveness of mobile opioid use disorder vans on reducing substance abuse. Pierce County partnered with UC Santa Cruz to plan the RCT.</p>
+<p>This application plots potential site locations for mobile opioid use disorder treatment vans, their location relative to the number of overdose 911-related calls, and their locations relative to main roads and transit. Potential sites have been clustered into high, medium, and low needs areas based on overdose call locations and accessibility.</p>
 <iframe src="https://odlocationcalls-fhv9mbksbcgsyjullanean.streamlit.app/?embed=true#middle-section" height="600" width="100%" style="border:none;" sandbox="allow-same-origin allow-scripts allow-forms">
 </iframe>
 <section id="key-findings" class="level2">
 <h2 class="anchored" data-anchor-id="key-findings">Key Findings</h2>
 <ul>
-<li>Cluster analysis revealed three kinds of potential site: high call volume and high accessibility, medium call volume and medium accessibility, and low call volume and low accessibility. The site characteristics by cluster are depicted in Table 1 below.</li>
+<li>Cluster analysis revealed three kinds of potential sites: high call volume and high accessibility, medium call volume and medium accessibility, and low call volume and low accessibility. The site characteristics by cluster are depicted in Table 1 below.</li>
 </ul>
 <p><br></p>
 <p><strong>Table 1. Site Mean and Standard Deviation by Cluster</strong></p>
@@ -253,7 +253,7 @@ window.Quarto = {
 </table>
 <p><br></p>
 <ul>
-<li>Outside of Tacoma, overdose calls and accessibility were highest along the highway 7 and WA route 161 corridors. This is evidenced from the calls data themselves, but also the categorization of potential sites along these corridors into cluster 3.</li>
+<li>Outside of Tacoma, overdose calls and accessibility were highest along the Highway 7 and WA Route 161 corridors. This is evidenced from the calls data themselves, but also the categorization of potential sites along these corridors into cluster 3.</li>
 </ul>
 </section>
 <section id="data-sources" class="level2">
@@ -271,14 +271,14 @@ window.Quarto = {
 <li>Fixed MAT Locations</li>
 </ul>
 </section>
-<section id="the-goods-methods" class="level2">
-<h2 class="anchored" data-anchor-id="the-goods-methods">The Goods: Methods</h2>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <section id="building-the-application-for-data-informed-decision-making" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-application-for-data-informed-decision-making">Building the application for data-informed decision making</h3>
-<p>Subject matter experts at Pierce County Human Services identified fire stations, libraries, and safe parking sites as potential partners for locating a mobile opioid use-disoreder van on the premesis. For each potential site i, I calculated the number of calls within 500, 1000, 2000, and 3000 meters. Because we want to prioritize potential sites with ease of access, I also calculate the distance to the closest bus stop and major road. I omitted sites in the City of Tacoma due to it’s high presence of fixed MAT location and greater access to services.</p>
-<p>After applying a standard scalar feature normalization I performed K-means clustering on the feature set. K-means applies equal weighting to all features. However, from the context it is clear that the proximity of overdose calls to potential sites is more relevant than access to the site alone. The multiple features for the number of calls within different specified radii of the site increase the relative importance of the number of calls nearby, as well as capture information from different ranges of distance to sites.</p>
-<p>The site information, datasets, and clustering algorithm were packaged and ported into the Streamlit applicaiton. This allows the user to explore potential sites other than the pre-calculated sites at fire statations, libraries and safe parking.</p>
-<p>This application alone was sufficient to help Pierce County Human Service’s program managers think through the implications of different site locations. However, it is unable to help researchers think through the implications of site selection on statistical power.</p>
+<p>Subject matter experts at Pierce County Human Services identified fire stations, libraries, and safe parking sites as potential partners for locating a mobile opioid use-disorder van on the premises. For each potential site i, the number of calls was calculated within 500, 1000, 2000, and 3000 meters. Because we want to prioritize potential sites with ease of access, I also calculated the distance to the closest bus stop and major road. I omitted sites in the City of Tacoma due to it’s high presence of fixed MAT location and greater access to services.</p>
+<p>After performing standard scalar feature normalization, K-means clustering was applied on the feature set. K-means applies equal weighting to all features. However, from the context it is clear that the proximity of overdose calls to potential sites is more relevant than access to the site alone. The multiple features for the number of calls within different specified radii of the site increase the relative importance of the number of calls nearby, as well as capture information from different ranges of distance to sites.</p>
+<p>The site information, datasets, and clustering algorithm were packaged and ported into the Streamlit application. This allows the user to explore potential sites other than the pre-calculated sites at fire stations, libraries and safe parking.</p>
+<p>This application alone was sufficient to help Pierce County Human Services’ program managers think through the implications of different site locations. However, it is unable to help researchers think through the implications of site selection on statistical power.</p>
 </section>
 <section id="site-selection-and-power-analysis-for-block-randomized-trials-a-problem-of-search" class="level3">
 <h3 class="anchored" data-anchor-id="site-selection-and-power-analysis-for-block-randomized-trials-a-problem-of-search">Site Selection and Power Analysis for Block-Randomized Trials: A Problem of Search</h3>
@@ -298,7 +298,7 @@ Technical Details: Statistical Framework and Implementation
 <div class="callout-body-container callout-body">
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">1. Introduction</h3>
-<p>This document outlines the methodology used to select sites so as to maximize statistical power. This report begins by discussing the statistical model used in a block-randomized trial with exactly one treated unit per block and potentially multiple control units, where block sizes may be unbalanced. The approach leverages pre-treatment data to estimate variance components and follows the framework established by Pashley and Miratrix (2021) for calculating power. It discusses the potential of spillover effects in a spatial randomization, and develops a methodology to maximize statistical power while minimizing the potential for spillover.</p>
+<p>This document outlines the methodology used to select sites so as to maximize statistical power. This report discusses the statistical model used in a block-randomized trial with exactly one treated unit per block and potentially multiple control units, where block sizes may be unbalanced. The approach leverages pre-treatment data to estimate variance components and follows the framework established by Pashley and Miratrix (2021) for calculating power. It discusses the potential of spillover effects in a spatial randomization and develops a methodology to maximize statistical power while minimizing the potential for spillover.</p>
 </section>
 <section id="statistical-model" class="level3">
 <h3 class="anchored" data-anchor-id="statistical-model">2. Statistical Model</h3>
@@ -356,7 +356,7 @@ Technical Details: Statistical Framework and Implementation
 </section>
 <section id="optimizing-power-and-preventing-spill-over" class="level3">
 <h3 class="anchored" data-anchor-id="optimizing-power-and-preventing-spill-over">7. Optimizing Power and Preventing Spill Over</h3>
-<p>Our goal is to select sites to maximize statisticl power, while ensuring there is no spill over of treatment effects between sites. We can minimize the potential of spill over effects by ensuring all selected sites are at a minimum of X meters away from each other. The optimization progam is formed as follows:</p>
+<p>Our goal is to select sites to maximize statisticl power, while ensuring there is no spill over of treatment effects between sites. We can minimize the potential of spill over effects by ensuring all selected sites are at a minimum of X meters away from each other. The optimization program is formed as follows:</p>
 <p>Let: - <span class="math inline">\(S_{i,k}\)</span> be a 0/1 indicator for whether site <span class="math inline">\(i\)</span> is in block <span class="math inline">\(k\)</span> - <span class="math inline">\((L_{i,1}, L_{i, 2})\)</span> be the coordinates of site <span class="math inline">\(i\)</span> in a projection (EPSG:6559) such that the euclidian distance between two coordinates is meters - <span class="math inline">\(D_{min}\)</span> be the minimum distance two sites must be apart for spill over to be neglegble</p>
 <p>The objective function is:</p>
 <p><span class="math display">\[ argmax_{S_{i,g}} \Phi\left(\frac{|\delta|}{\sqrt{\widehat{Var}(\hat{\tau}_{(BK)})}} - z_{1-\alpha/2}\right)\]</span></p>
@@ -364,7 +364,7 @@ Technical Details: Statistical Framework and Implementation
 <p><span class="math display">\[ \sum_{g} S_{i,g} \leq 1 \quad \forall i \]</span></p>
 <p><span class="math display">\[\sqrt{(L_{i,1}-L_{j,1})^2 + (L_{i,2}-L_{j,2})^2} \geq (\sum_{g} S_{i,g})(\sum_{g} S_{j,g})D_{min} \quad \forall i, j \quad if \: i\neq j   \]</span></p>
 <p>Here the first constraint ensures each site can belong to only one block at most. The second constraint requires selected sites only to be at least <span class="math inline">\(D_{min}\)</span> meters away from each other.</p>
-<p>This optimiztion problem is constrained, highly non-linear, and is a mixed binary and continous problem. It not tractable with existing methods. However, examining the factors that influence the power calculation can yield insight into how to design an approach that may approximate site selection for maximal power. Specifically, power be maximized when the variance of the treatment effect estimator is minimized. Examining the formula for the treatment effect varience shows that it is minimized when sample sizes increase and when the within-block variances are minimized. Unfortunately, increasing sample sizes and minimizing within-block variance may not always be compatible. In section 9 below we detail an approach that weighs tradeoffs between maximizing sample size and minimizing within-block variance while ensure negligille spill over.</p>
+<p>This optimiztion problem is constrained, highly non-linear, and is a mixed binary and continuous problem. It is not tractable with existing methods. However, examining the factors that influence the power calculation can yield insight into how to design an approach that may approximate site selection for maximal power. Specifically, power is maximized when the variance of the treatment effect estimator is minimized. Examining the formula for the treatment effect variance shows that it is minimized when sample sizes increase and when the within-block variances are minimized. Unfortunately, increasing sample sizes and minimizing within-block variance may not always be compatible. In section 9 below we detail an approach that weighs the tradeoffs between maximizing sample size and minimizing within-block variance while ensuring negligible spillover.</p>
 </section>
 <section id="three-stage-approach-to-maximizing-power" class="level3">
 <h3 class="anchored" data-anchor-id="three-stage-approach-to-maximizing-power">8. Three Stage Approach to Maximizing Power</h3>
@@ -377,7 +377,7 @@ Technical Details: Statistical Framework and Implementation
 <p>The optimization problem is:</p>
 <p><span class="math display">\[\text{maximize } \sum_{i \in S} S_i\]</span></p>
 <p>Subject to: <span class="math display">\[S_i + S_j \leq D_{i,j} + 1 \quad \forall i,j \in S\]</span></p>
-<p>This constraint ensures that if two sites <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are both selected (<span class="math inline">\(Z_i = Z_j = 1\)</span>), then they must be sufficiently far apart (<span class="math inline">\(D_{i,j} = 1\)</span>). The constarint cannot be satisfied if both are selected and are too close.</p>
+<p>This constraint ensures that if two sites <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are both selected (<span class="math inline">\(Z_i = Z_j = 1\)</span>), then they must be sufficiently far apart (<span class="math inline">\(D_{i,j} = 1\)</span>). The constraint cannot be satisfied if both are selected and are too close.</p>
 </section>
 <section id="stage-2-assign-sites-to-blocks-using-k-means-clustering" class="level4">
 <h4 class="anchored" data-anchor-id="stage-2-assign-sites-to-blocks-using-k-means-clustering">Stage 2: Assign Sites to Blocks Using K-means Clustering</h4>
@@ -491,12 +491,12 @@ Technical Details: Statistical Framework and Implementation
 <p>Figure 1 below depicts the power calculations for selected sites based on the threshold minimum.</p>
 <p><img src="images\power_analysis_plot.png" alt="Figure 1" width="50%"></p>
 <p><br></p>
-<p>While there is arrangement of sites with a power level greater than 80%, the analyses here represent a upper bound on the power calculations. This analysis is an upper bound on the power calculation because a number of key assumptions are likely violated. For instance, with only 4 blocks the normality of the estimator is unlikely to hold. Furthermore, the scenario where the power reached more than 80% had only 10 total sites selected. This means at most 3 sites per block were used to inform the estimate of the within-block variance.</p>
-<p>Figure 2 below plots the number of sites selected on the x-axis, the average within-block variance on the y-axsis, and a gradient and marker size value for the power with larger and redder markers indicating greater power.</p>
+<p>While there is an arrangement of sites with a power level greater than 80%, the analyses here represent an upper bound on the power calculations. This analysis is an upper bound on the power calculation because a number of key assumptions are likely violated. For instance, with only 4 blocks the normality of the estimator is unlikely to hold. Furthermore, the scenario where the power reached more than 80% had only 10 total sites selected. This means at most 3 sites per block were used to inform the estimate of the within-block variance.</p>
+<p>Figure 2 below plots the number of sites selected on the x-axis, the average within-block variance on the y-axis, and a gradient and marker size value for the power with larger and redder markers indicating greater power.</p>
 <p><img src="images\variance_nsites_power.png" alt="Figure 1" width="50%"></p>
 <p><br></p>
-<p>What is clear from figure 2 is that the arrangements with the highest power are driven almost entirely by reductions in the within-block variance. This combined with the low-sample sizes is concerning, since it could indicate our algorithm is overfitting. The low block sample sizes means our process for selecting blocks after site selection is likely underestimating the true within-block variance.</p>
-<p>That being said, the sites that are selected do possess several desirable qualities. They are geographically distant from one another (see figure 3), have higher call volumnes than the average site, and have low-within block variance.</p>
+<p>What is clear from figure 2 is that the arrangements with the highest power are driven almost entirely by reductions in the within-block variance. This combined with the low sample sizes is concerning, since it could indicate our algorithm is overfitting. The low block sample sizes mean our process for selecting blocks after site selection is likely underestimating the true within-block variance.</p>
+<p>That being said, the sites that are selected do possess several desirable qualities. They are geographically distant from one another (see figure 3), have higher call volumes than the average site, and have low within-block variance.</p>
 <p><img src="images\best_power_sites.png" alt="Figure 1" width="50%"></p>
 </section>
 </div>
@@ -508,7 +508,7 @@ Technical Details: Statistical Framework and Implementation
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <ul>
 <li>Containerize with Docker and deploy via AWS</li>
-<li>Consider alternative RCT design. If applicable, create <a href="https://link.springer.com/article/10.3758/s13428-021-01546-0">synthetic</a> data and run power calculations.</li>
+<li>Consider alternative RCT designs. If applicable, create <a href="https://link.springer.com/article/10.3758/s13428-021-01546-0">synthetic</a> data and run power calculations.</li>
 </ul>
 </section>
 <section id="references" class="level2">
