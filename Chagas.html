@@ -101,10 +101,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./Publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Projects.html"> 
-<span class="menu-text">Projects</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -157,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tldr">📌 TL;DR</h2>
 <ul>
 <li>Built and trained a deep neural network (1D CNN) to detect Chagas disease from ECG signals.</li>
-<li>Achieved AUROC of 0.84 on unseen data.</li>
+<li>Achieved an Area Under the Receiver Operating Characteristic Curve (AUROC) of 0.84 on unseen data.</li>
 <li>Deployed an interactive app to test predictions on user-uploaded ECGs.</li>
 <li>Applied best practices in deep learning, model evaluation, and deployment.</li>
 </ul>
@@ -166,17 +162,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>Chagas disease is a parasitic illness transmitted by insects, affecting an estimated 8 million people worldwide and causing over 4,750 deaths annually. While most individuals show no noticeable symptoms at the time of initial infection, the disease can progress silently over time, ultimately leading to heart failure in chronic cases.</p>
 <p>This project builds on the work of Jidling et al.&nbsp;(2023), who developed a convolutional neural network (CNN) to detect Chagas disease using electrocardiogram (ECG) data. Expanding on their approach, I incorporate the sequential nature of ECG signals by designing a hybrid deep learning model that combines convolutional and transformer architectures. This enhancement significantly improves diagnostic performance: on the validation set, the area under the receiver operating characteristic curve (AUC-ROC) increases from 0.80 with the CNN alone to 0.84 with the combined model. Improving early detection of undiagnosed cases could lead to life-saving interventions for hundreds of patients.</p>
-<p>On this page you will find the hybrid model is embedded below. It is followed by a detailed schematic of the architecture and a write-up of this project, which was inspired by the PhysioNet 2025 challenge.</p>
+<p>Below, you’ll find an embedded version of the hybrid model. It is followed by a detailed schematic of the architecture and a write-up of this project, which was inspired by the PhysioNet 2025 challenge.</p>
 </section>
 <section id="try-it-yourself" class="level2">
 <h2 class="anchored" data-anchor-id="try-it-yourself">🔍 Try It Yourself</h2>
-<p>Upload your own ECG input to see predictions from the trained deep learning model. Don’t have ECG data lying around, try out this CODE-15 and SaMi-Trop <a href="Sample_Data.zip">sample</a>.</p>
+<p>Upload your own ECG input to see predictions from the trained deep learning model. Don’t have ECG data on hand? Try this sample from CODE-15 and SaMi-Trop: <a href="Sample_Data.zip">sample</a>.</p>
 <iframe src="https://chagasprediction-hcgebjyfafrfk5nzeeb37b.streamlit.app/?embed=true#middle-section" height="600" width="100%" style="border:none;" sandbox="allow-same-origin allow-scripts allow-forms">
 </iframe>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>Figure 1 below plots the loss curves for the training and validation set by epoch. The validation loss and AUROC scores plateaus by the 6th epoch. Nevertheless, the validation AUROC achieved state of the art results for diagnosing Chagas disease. The best AUROC validation score was 0.84, which constitutes a significant improvement over the 0.80 AUROC score in the convolution only model explored in Jidling et al.&nbsp;(2023).</p>
+<p>Figure 1 below plots the loss curves for the training and validation set by epoch. The validation loss and AUROC scores plateau by the 6th epoch. Nevertheless, the validation AUROC achieved state-of-the-art results for diagnosing Chagas disease. The best AUROC validation score was 0.84, which constitutes a significant improvement over the 0.80 AUROC score in the convolution only model explored in Jidling et al.&nbsp;(2023).</p>
 <p><strong>Figure 1:</strong> Loss and AUROC curves demonstrate stable training and generalization over 10 epochs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -206,12 +202,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>The model achieves a recall of 0.72 and a precision of 0.78. For the purposes of medical diagnosing, a false negative (i.e.&nbsp;telling a patient they are Chagas-free when in fact they have Chagas) is typically considered a worse error to make. The threshold on this model could be lowered to lower the incidence of false negatives. The implications of this would be to increase false positives, lower precision, but to increase recall.</p>
+<p>The model achieves a recall of 0.72 and a precision of 0.78. In clinical contexts, a false negative (i.e., informing a patient they are Chagas-free when they are not) is typically considered a worse error to make. The threshold on this model could be lowered to lower the incidence of false negatives. The implications of this would be to increase false positives, lower precision, but to increase recall.</p>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <p>The model is a 1D CNN optimized for time-series ECG data. It extracts temporal patterns in raw signals to distinguish Chagas-positive and negative cases with high performance.</p>
-<p>Figure 2 below displays the architecture used to diagnos Chagas disease. For a full discussion of the experiments and their results, please read the following <a href="'reports/ChagasDx.pdf'">paper</a>.</p>
+<p>Figure 2 below displays the architecture used to diagnose Chagas disease. For a full discussion of the experiments and their results, please read the following <a href="reports/ChagasDx.pdf">paper</a>.</p>
 <p><strong>Figure 2:</strong> 1D Convolutional Neural Network architecture for ECG signal classification.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -309,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/gratzt\.github\.io\/Portfolio\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

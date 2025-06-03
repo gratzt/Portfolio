@@ -130,10 +130,6 @@ window.Quarto = {
     <a class="nav-link" href="./Publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Projects.html"> 
-<span class="menu-text">Projects</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -196,7 +192,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="tldr">📌 TL;DR</h2>
 <ul>
 <li>Derived mathematical relationship between housing intervention prioritization and treatment effects for exiting homelessness</li>
-<li>Used this mathematical relationship to identify a misalignment between the department of Housing and Urban Development(HUD) policy objectives and optimal resource allocation</li>
+<li>Used this mathematical relationship to identify a misalignment between the Department of Housing and Urban Development(HUD) policy objectives and optimal resource allocation</li>
 <li>Developed an optimization framework that balances maximizing exits from homelessness with equitable resource allocation</li>
 <li>Created a dynamic weighting algorithm that ensures Fair Housing Act compliance</li>
 <li>Achieved resource allocation that maximizes exits from homelessness while maintaining equity ratios within ±5% of parity</li>
@@ -205,23 +201,23 @@ window.Quarto = {
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>In 2023, over half a million people in the United States experienced homelessness on a single night, with this population continuing to grow despite substantial government funding. Nevertheless, these resources remain insufficient to meet the need.</p>
-<p>Continuums of Care, the local agencies overseeing housing assistance, must prioritize households based on observable characteristics for reciept of scarce housing resources. HUD’s current recommendations direct prioritization scores to be based on barriers to obtain housing and household vulnerabilities. When housing slots become available, households with the highest prioritization scores are selected for interventions such as rapid rehousing (RRH), transitional housing (TSH), or permanent supportive housing (PSH). Due to resource constraints, most eligible households do not receive housing interventions.</p>
+<p>Continuums of Care, the local agencies overseeing housing assistance, must prioritize households based on observable characteristics for receipt of scarce housing resources. HUD’s current recommendations direct prioritization scores to be based on barriers to obtaining housing and household vulnerabilities. When housing slots become available, households with the highest prioritization scores are selected for interventions such as rapid rehousing (RRH), transitional housing (TSH), or permanent supportive housing (PSH). Due to resource constraints, most eligible households do not receive housing interventions.</p>
 <p>This project addresses a critical question in homelessness policy: How can we allocate scarce housing interventions to maximize successful exits from homelessness while ensuring an equitable distribution across protected demographic groups?</p>
-<p>Building on the work of Kube et al.&nbsp;(2023), this project developed and expanded an optimization framework that not only maximizes system efficiency but also incorporates equity constraints to prevent disparate impacts. This approach demonstrates how data science can support effective policymaking and balance competing policy objectives. A full write-up is available <a href="'reports/EquitableInterventionAllocation.pdf'">here</a></p>
+<p>Building on the work of Kube et al.&nbsp;(2023), this project developed and expanded an optimization framework that not only maximizes system efficiency but also incorporates equity constraints to prevent disparate impacts. This approach demonstrates how data science can support effective policymaking and balance competing policy objectives. A full write-up is available <a href="reports/EquitableInterventionAllocation.pdf">here</a></p>
 </section>
 <section id="key-insights" class="level2">
 <h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
 <p>Analysis of housing intervention data revealed three critical findings:</p>
 <ol type="1">
-<li><p><strong>Policy misalignment:</strong> Current HUD prioritization guidance (CPD-17-01) emphasizes barriers to obtainin housing and vulnerability factors rather than their responsivness to housing interventions, as measured by change in the likelihood of a successful exit in response to a housing intervention. Focusing on a household’s response to housing interventions aligns with the objective of exiting the greatest number of people from homelessness. Approaches that do not focus on a household’s responsiveness to interventions may reduce overall system effectiveness.</p></li>
-<li><p><strong>Intervention effectivness disparities:</strong> The effectiveness of interventions, i.e.&nbsp;conditional average treatment effects (CATEs), vary significantly across demographic groups. For example rapid rehousing shows a stronger positive impact on the likelihood of a successful exit from homelessness for female-identifying heads of households (see Figure 1). Simulated intervention effectiveness may be used as an exploratory data analysis tool for understanding potential disproportionate assignment to housing interventions.</p></li>
-<li><p><strong>Equity-efficiency tradeoff:</strong> Without adjustment, allocating housing interventions based purely on maximizing exits from homelessness creates inequitable resource distributions. Risk-ratio penalization in the optimiztion cost function can balance the trade-offs inherent between the most efficient allocations, as measured by the most number of exiting households, and equitable allocations.</p></li>
+<li><p><strong>Policy misalignment:</strong> Current HUD prioritization guidance (CPD-17-01) emphasizes barriers to obtaining housing and vulnerability factors rather than their responsiveness to housing interventions, as measured by change in the likelihood of a successful exit in response to a housing intervention. Focusing on a household’s response to housing interventions aligns with the objective of exiting the greatest number of people from homelessness. Approaches that do not focus on a household’s responsiveness to interventions may reduce overall system effectiveness.</p></li>
+<li><p><strong>Intervention effectiveness disparities:</strong> The effectiveness of interventions, i.e., conditional average treatment effects (CATEs), vary significantly across demographic groups. For example rapid rehousing shows a stronger positive impact on the likelihood of a successful exit from homelessness for female-identifying heads of households (see Figure 1). Simulated intervention effectiveness may be used as an exploratory data analysis tool for understanding potential disproportionate assignment to housing interventions.</p></li>
+<li><p><strong>Equity-efficiency tradeoff:</strong> Without adjustment, allocating housing interventions based purely on maximizing exits from homelessness creates inequitable resource distributions. Risk-ratio penalization in the optimization cost function can balance the trade-offs inherent between the most efficient allocations, as measured by the most number of exiting households, and equitable allocations.</p></li>
 </ol>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>Our <a href="'reports/EquitableInterventionAllocation.pdf'">report</a> demonstrates that maximizing the number of households exiting homelessness requires strategic allocation of housing resources. Specifically, interventions should be directed toward households with the greatest increase in their likelihood of exiting homelessness when receiving support versus none.</p>
-<p>Figure 1 below depicts the distribution of the change in the likelihood of exiting homelessness (.i.e. CATEs) for rapid rehousing by whether the head of household identified as female or male. Figure 1 clearly shows that female-identifying households are more responsive to housing interventions.</p>
+<p>Our <a href="reports/EquitableInterventionAllocation.pdf">report</a> demonstrates that maximizing the number of households exiting homelessness requires strategic allocation of housing resources. Specifically, interventions should be directed toward households with the greatest increase in their likelihood of exiting homelessness when receiving support versus none.</p>
+<p>Figure 1 below depicts the distribution of the change in the likelihood of exiting homelessness (.i.e., CATEs) for rapid rehousing by whether the head of household identified as female or male. Figure 1 clearly shows that female-identifying households are more responsive to housing interventions.</p>
 <p><strong>Figure 1:</strong> Rapid Re-Housing Treatment Effects by Gender</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -271,7 +267,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="optimization-to-maximize-exits">Optimization to Maximize Exits</h3>
 <p>Let:</p>
 <ul>
-<li><span class="math inline">\(p_{ijt}\)</span> be the predicted probability that household <span class="math inline">\(i\)</span> exits homelessness in week <span class="math inline">\(t\)</span> if assigned intervention <span class="math inline">\(j\)</span>. No intervention is included in the set of of “interventions” J, and corresponds to <span class="math inline">\(j=0\)</span></li>
+<li><span class="math inline">\(p_{ijt}\)</span> be the predicted probability that household <span class="math inline">\(i\)</span> exits homelessness in week <span class="math inline">\(t\)</span> if assigned intervention <span class="math inline">\(j\)</span>. No intervention is included in the set of “interventions” J, and corresponds to <span class="math inline">\(j=0\)</span></li>
 <li><span class="math inline">\(x_{ijt}\)</span> be a binary indicator of whether household <span class="math inline">\(i\)</span> is assigned intervention <span class="math inline">\(j\)</span> in week <span class="math inline">\(t\)</span></li>
 <li><span class="math inline">\(C_{jt}\)</span> be the number of available slots for intervention <span class="math inline">\(j\)</span> in week <span class="math inline">\(t\)</span></li>
 </ul>
@@ -350,7 +346,7 @@ x_{1,\text{tx}} + x_{2,\text{tx}} = 1
 </section>
 <section id="acknowledgments" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>This analysis builds upon the work of Kube et al.&nbsp;(2023) on efficient allocation of homelessness resources. All data was provided by a large Continuum of Care through their Homelessness Management Information System (HMIS). Trevor Gratz ideated, scoped, developed the connection between optimizations and CATEs, created the penalized optimization algorithm, and wrote the associated paper. Anu Zan implemented the optimization algorithm and created Figure 3.</p>
+<p>This analysis builds upon the work of Kube et al.&nbsp;(2023) on efficient allocation of homelessness resources. All data was provided by a large Continuum of Care through their Homelessness Management Information System (HMIS). Trevor Gratz ideated, scoped, developed the connection between optimizations and CATEs, created the penalized optimization algorithm, and wrote the associated paper. Anu Zan implemented the optimization algorithm and created Figure 2.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -437,7 +433,7 @@ x_{1,\text{tx}} + x_{2,\text{tx}} = 1
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/gratzt\.github\.io\/Portfolio\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
