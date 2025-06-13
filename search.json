@@ -151,7 +151,7 @@
     "href": "Chagas.html#try-it-yourself",
     "title": "Diagnosing Chagas disease with deep neural networks",
     "section": "🔍 Try It Yourself",
-    "text": "🔍 Try It Yourself\nUpload your own ECG input to see predictions from the trained deep learning model. Don’t have ECG data on hand? Try this sample from CODE-15 and SaMi-Trop: sample."
+    "text": "🔍 Try It Yourself\nUpload your own ECG input to see predictions from the trained deep learning model. Don’t have ECG data on hand? Try this sample from CODE-15 and SaMi-Trop: sample. If the applicaiton is asleep it is best to wake it from its homepage."
   },
   {
     "objectID": "Chagas.html#results",
