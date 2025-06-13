@@ -11,6 +11,8 @@ The analyses and tools presented here support the planning phase of rolling out 
 
 This application plots potential site locations for mobile opioid use disorder treatment vans, their location relative to the number of overdose 911-related calls, and their locations relative to main roads and transit. Potential sites have been clustered into high, medium, and low needs areas based on overdose call locations and accessibility.
 
+If the applicaiton is asleep it is best to wake it from its [homepage](https://odlocationcalls-fhv9mbksbcgsyjullanean.streamlit.app/?embed=true#middle-section)
+
 <iframe
   src="https://odlocationcalls-fhv9mbksbcgsyjullanean.streamlit.app/?embed=true#middle-section"
   height="600"
