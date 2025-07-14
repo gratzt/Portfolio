@@ -20,7 +20,9 @@ Below, you'll find an embedded version of the hybrid model. It is followed by a 
 
 ## 🔍 Try It Yourself
 
-Upload your own ECG input to see predictions from the trained deep learning model. Don't have ECG data on hand? Try this sample from CODE-15 and SaMi-Trop: [sample](Sample_Data.zip). If the applicaiton is asleep it is best to wake it from its [homepage](https://chagasprediction-hcgebjyfafrfk5nzeeb37b.streamlit.app/?embed=true#middle-section). 
+Upload your own ECG input to see predictions from the trained deep learning model. Don't have ECG data on hand? Try this sample from CODE-15 and SaMi-Trop: [sample](Sample_Data.zip).  
+
+If the applicaiton is asleep it is best to wake it from its [homepage](https://chagasprediction-hcgebjyfafrfk5nzeeb37b.streamlit.app/?embed=true#middle-section). 
 
 <iframe
   src="https://chagasprediction-hcgebjyfafrfk5nzeeb37b.streamlit.app/?embed=true#middle-section"

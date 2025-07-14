@@ -1,0 +1,71 @@
+---
+title: "Building scalable data infrastructure for behavioral health program evaluation"
+format:
+  html:
+    self-contained: true
+---
+
+## 📌 TL;DR
+
+* Spearheaded the complete redesign of the data and reporting infrastructure for Pierce County's $30 million behavioral health services portfolio.
+* Increased program data collection from 7 providers submitting aggregate data to 27 providers submitting client-level data, capturing over 90,000 services for 16,000 clients since January 2024.
+* Developed a comprehensive data quality assurance codebase and coached two analysts in its implementation, ensuring high-fidelity data from providers.
+* Negotiated critical data-sharing agreements with state agencies to enable future outcome evaluations on the intersection of behavioral health with the criminal justice system and employment.
+
+---
+
+## 🌎 Overview
+
+Pierce County's strategic plan identifies "Healthy People" as a critical focus area. This priority is underscored by a sobering statistic: between 2016 and 2023, drug-induced deaths in the county rose from 149 to 392, representing a 160% increase. Furthermore, this crisis disproportionately affects vulnerable populations. My analysis revealed that for every $10,000 decrease in a neighborhood's median household income, there is a 12% increase in overdose-related 911 calls.
+
+<details>
+<summary>Technical Note 💡</summary>
+This finding comes from a Poisson regression analysis of the number of overdose-related calls in 2023 regressed against American Community Survey data on household median income at the Census tract level. An offset for population size was included in the analysis.  
+
+Data for Drug-induced deaths (below) come from the Washington Department of Health's tracking [network](https://doh.wa.gov/data-and-statistical-reports/washington-tracking-network-wtn/opioids/overdose-dashboard) filtered to Pierce County and any death.
+</details>
+
+**Figure 1:** Drug-induced deaths in Pierce County have risen dramatically, underscoring the urgency of data-driven behavioral health interventions.
+
+![](images/OverdoseDeaths.png){fig-align="center"}  
+
+When I joined the county's behavioral health initiatives in 2022, the data landscape was fragmented. To effectively address the county's needs, a robust data infrastructure was essential. Working with my colleagues, I have been a leader in transforming this system from the ground up.
+
+
+<br>
+
+
+---
+
+## 🏆 Key Achievements & My Contributions
+
+This initiative overhauled how Pierce County understands and manages its behavioral health services. We moved from a limited, aggregated view to a detailed, client-level understanding of service delivery.
+
+### Data Infrastructure & Quality
+
+-   **Expanded Data Collection:** I was instrumental in enhancing provider contracts, which led to a nearly 4x increase in participating programs (from 7 to 27) submitting detailed, client-level data.
+-   **Standardized Protocols:** I created standardized data collection protocols and documentation, ensuring consistency across a diverse network of service providers.
+-   **Data Quality Assurance:** I designed and led the implementation of a comprehensive data quality assurance codebase. This system automates the detection of data submission anomalies, allowing for rapid feedback and correction with providers. I also coached two analysts on its use and on provider communication strategies.
+
+### Team Leadership & Strategy
+
+-   **Technical Mentorship:** I coached team members on modern data science workflows, including distributed coding, functional programming in R, and version control with Git.
+-   **Engineering Roadmap:** I developed a detailed work plan for our Data Engineering and Software Engineering teams by sourcing and prioritizing ETL enhancements to streamline our data pipelines.
+-   **Cross-Agency Collaboration:** I successfully negotiated data-sharing agreements with the Washington State Office of Financial Management and the Employment Security Department. These agreements are critical for our upcoming outcome evaluations, allowing us to link behavioral health interventions with criminal justice and employment data.
+
+<br>
+
+![](images/ProcessRedesign.svg){fig-align="center"} 
+
+
+---
+
+## 🚀 Next Steps
+
+The foundation we've built is now enabling deeper, more impactful analyses.
+
+-   **ETL Enhancements & Testing:** The data pipeline enhancements I designed are currently being implemented by our engineering teams. I will be conducting extensive unit testing in the fall of 2025 before the full rollout with the 2026 contracts.
+-   **Healthcare Outcomes Analysis:** With healthcare claims data received in spring 2025, I am now analyzing the impact of program participation on health outcomes. This analysis is on track for completion by the end of 2025.
+-   **Holistic Program Evaluation:** Beginning in 2026, I will leverage the data-sharing agreements I secured to conduct a "whole-person" analysis, evaluating how our behavioral health programs influence criminal justice involvement, educational attainment, and employment outcomes.
+
+
