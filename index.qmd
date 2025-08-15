@@ -11,7 +11,9 @@ page-layout: full
 
 # Welcome
 
-Hi, I'm Trevor Gratz, a data scientist with experience in predictive analytics, causal inference, and analyses that foster data-informed decision-making and enhance operational efficiency. I have a background in mathematics, statistics, and data analytics, and I've worked in academia and the public sector. I received my Bachelor of Science in Mathematics and Statistics in 2014 from the University of Washington and my Master of Science in Data Analytics from Georgia Tech in August, 2025. I have over a decade of work experience in data analytics and am a co-author on over ten peer-reviewed [publications](https://scholar.google.com/citations?user=X7r0bxsAAAAJ&hl=en&oi=ao) cited by more than 500 journal articles. 
+Hi, I'm Trevor Gratz, a senior data scientist specializing in complex analytical challenges. I apply causal inference, machine learning, and rigorous evaluation to drive strategic decisions and enhance operational efficiency.
+
+With over a decade of experience leading projects from ideation to implementation, I transform complex, fragmented data into actionable insights for executive leaders, program managers, and technical teams. My work is grounded in a commitment to equity, ensuring that data-driven decisions foster fair and just outcomes. I have a proven track record of building novel datasets, developing state-of-the-art predictive models, and architecting the data systems necessary to measure and evaluate program impacts. I am a co-author on over ten peer-reviewed [publications](https://scholar.google.com/citations?user=X7r0bxsAAAAJ&hl=en&oi=ao) cited by more than 575 journal articles. 
 
 ---
 
@@ -35,7 +37,7 @@ Spearheaded the complete redesign of Pierce County's behavioral health data syst
 
 👉 [View Project ›](Modernize_BH.qmd)
 
-#### Diagnosing Chagas Disease with Deep Convolutional Neural Networks
+#### Diagnosing Chagas disease with deep convolutional neural networks
 
 Created a hybrid convolutional neural network plus transformer model to diagnose Chagas disease from electrocardiogram data and achieved state-of-the-art performance.   
 👉 [View Project ›](Chagas.qmd)
