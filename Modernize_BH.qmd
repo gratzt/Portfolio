@@ -8,7 +8,7 @@ format:
 ## 📌 TL;DR
 
 * Spearheaded the complete redesign of the data and reporting infrastructure for Pierce County's $30 million behavioral health services portfolio.
-* Increased program data collection from 7 providers submitting aggregate data to 27 providers submitting client-level data, capturing over 90,000 services for 16,000 clients since January 2024.
+* Increased program data collection from 7 providers submitting aggregate data to 27 providers submitting client-level data, capturing over 90,000 services for 18,000 clients since January 2024.
 * Developed a comprehensive data quality assurance codebase and coached two analysts in its implementation, ensuring high-fidelity data from providers.
 * Negotiated critical data-sharing agreements with state agencies to enable future outcome evaluations on the intersection of behavioral health with the criminal justice system and employment.
 
@@ -39,19 +39,19 @@ When I joined the county's behavioral health initiatives in 2022, the data lands
 
 ## 🏆 Key Achievements & My Contributions
 
-This initiative overhauled how Pierce County understands and manages its behavioral health services. We moved from a limited, aggregated view to a detailed, client-level understanding of service delivery.
 
-### Data Infrastructure & Quality
+This initiative overhauled how Pierce County understands and manages its behavioral health services. I led a multi-faceted effort that blended stakeholder collaboration, resilient technical design, and team leadership.
 
--   **Expanded Data Collection:** I was instrumental in enhancing provider contracts, which led to a nearly 4x increase in participating programs (from 7 to 27) submitting detailed, client-level data.
--   **Standardized Protocols:** I created standardized data collection protocols and documentation, ensuring consistency across a diverse network of service providers.
--   **Data Quality Assurance:** I designed and led the implementation of a comprehensive data quality assurance codebase. This system automates the detection of data submission anomalies, allowing for rapid feedback and correction with providers. I also coached two analysts on its use and on provider communication strategies.
+**1. Stakeholder Collaboration & System Design** My approach centered on group processes to gather precise requirements from over 30 service providers, program managers, data engineers, and legal teams. Through numerous ongoing meetings, I advocated for shifting from aggregated metrics to client-level data submission, explaining that disaggregation is essential for any meaningful racial equity analysis. I developed the technical specifications for data files, including detailed variable definitions and reporting cadences, while iteratively adapting them to balance analytical rigor with the operational realities of our diverse providers.
 
-### Team Leadership & Strategy
+**2. Data Engineering and ETL Enhancements** To create a resilient and scalable system, I independently sourced and specified several key enhancements to the data ingestion (ETL) process for our data engineering teams to implement. These included:
+- **Modular Integration:** Architecting the ETL pipeline so that a data submission failure from one program would not halt the entire system.
+- **Data Submission Logging:** Designing a logging system to track submissions in accordance with county data retention policies.
+- **Increased Flexibility:** Making the ETL non-case-sensitive and ideating a protocol to automatically map common invalid values to valid categories, which significantly reduced submission errors.
 
--   **Technical Mentorship:** I coached team members on modern data science workflows, including distributed coding, functional programming in R, and version control with Git.
--   **Engineering Roadmap:** I developed a detailed work plan for our Data Engineering and Software Engineering teams by sourcing and prioritizing ETL enhancements to streamline our data pipelines.
--   **Cross-Agency Collaboration:** I successfully negotiated data-sharing agreements with the Washington State Office of Financial Management and the Employment Security Department. These agreements are critical for our upcoming outcome evaluations, allowing us to link behavioral health interventions with criminal justice and employment data.
+**3. Data Quality Assurance & Team Leadership** Leading a team of two analysts, I designed and implemented a suite of automated data validation scripts in R. These scripts provided real-time, actionable feedback to providers on how to correct their submissions, identifying invalid values, mismatched client IDs between files, and inconsistent dates. This collaborative work required a new, distributed workflow, and I mentored the analysts on code structure, functional programming, and version control with Git.
+
+**4. Strategic Documentation and Future Vision** To ensure the system's longevity for new contracts, I architected a comprehensive, 30-plus page business requirements document. This document serves as a complete protocol for tracking, logging, and validating data and includes specifications for automated provider communications. This foundational work set the technical agenda for two separate teams—Software Development and IT-Data Services—for the next contracting cycle.
 
 <br>
 
@@ -67,5 +67,6 @@ The foundation we've built is now enabling deeper, more impactful analyses.
 -   **ETL Enhancements & Testing:** The data pipeline enhancements I designed are currently being implemented by our engineering teams. I will be conducting extensive unit testing in the fall of 2025 before the full rollout with the 2026 contracts.
 -   **Healthcare Outcomes Analysis:** With healthcare claims data received in spring 2025, I am now analyzing the impact of program participation on health outcomes. This analysis is on track for completion by the end of 2025.
 -   **Holistic Program Evaluation:** Beginning in 2026, I will leverage the data-sharing agreements I secured to conduct a "whole-person" analysis, evaluating how our behavioral health programs influence criminal justice involvement, educational attainment, and employment outcomes.
+
 
 
