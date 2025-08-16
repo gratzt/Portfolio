@@ -3849,11 +3849,7 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">📌 TL;DR</a></li>
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">🌎 Overview</a></li>
-  <li><a href="#key-achievements-my-contributions" id="toc-key-achievements-my-contributions" class="nav-link" data-scroll-target="#key-achievements-my-contributions">🏆 Key Achievements &amp; My Contributions</a>
-  <ul class="collapse">
-  <li><a href="#data-infrastructure-quality" id="toc-data-infrastructure-quality" class="nav-link" data-scroll-target="#data-infrastructure-quality">Data Infrastructure &amp; Quality</a></li>
-  <li><a href="#team-leadership-strategy" id="toc-team-leadership-strategy" class="nav-link" data-scroll-target="#team-leadership-strategy">Team Leadership &amp; Strategy</a></li>
-  </ul></li>
+  <li><a href="#key-achievements-my-contributions" id="toc-key-achievements-my-contributions" class="nav-link" data-scroll-target="#key-achievements-my-contributions">🏆 Key Achievements &amp; My Contributions</a></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">🚀 Next Steps</a></li>
   </ul>
 </nav>
@@ -3884,7 +3880,7 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="tldr">📌 TL;DR</h2>
 <ul>
 <li>Spearheaded the complete redesign of the data and reporting infrastructure for Pierce County’s $30 million behavioral health services portfolio.</li>
-<li>Increased program data collection from 7 providers submitting aggregate data to 27 providers submitting client-level data, capturing over 90,000 services for 16,000 clients since January 2024.</li>
+<li>Increased program data collection from 7 providers submitting aggregate data to 27 providers submitting client-level data, capturing over 90,000 services for 18,000 clients since January 2024.</li>
 <li>Developed a comprehensive data quality assurance codebase and coached two analysts in its implementation, ensuring high-fidelity data from providers.</li>
 <li>Negotiated critical data-sharing agreements with state agencies to enable future outcome evaluations on the intersection of behavioral health with the criminal justice system and employment.</li>
 </ul>
@@ -3912,22 +3908,11 @@ Data for Drug-induced deaths (below) come from the Washington Department of Heal
 </section>
 <section id="key-achievements-my-contributions" class="level2">
 <h2 class="anchored" data-anchor-id="key-achievements-my-contributions">🏆 Key Achievements &amp; My Contributions</h2>
-<p>This initiative overhauled how Pierce County understands and manages its behavioral health services. We moved from a limited, aggregated view to a detailed, client-level understanding of service delivery.</p>
-<section id="data-infrastructure-quality" class="level3">
-<h3 class="anchored" data-anchor-id="data-infrastructure-quality">Data Infrastructure &amp; Quality</h3>
-<ul>
-<li><strong>Expanded Data Collection:</strong> I was instrumental in enhancing provider contracts, which led to a nearly 4x increase in participating programs (from 7 to 27) submitting detailed, client-level data.</li>
-<li><strong>Standardized Protocols:</strong> I created standardized data collection protocols and documentation, ensuring consistency across a diverse network of service providers.</li>
-<li><strong>Data Quality Assurance:</strong> I designed and led the implementation of a comprehensive data quality assurance codebase. This system automates the detection of data submission anomalies, allowing for rapid feedback and correction with providers. I also coached two analysts on its use and on provider communication strategies.</li>
-</ul>
-</section>
-<section id="team-leadership-strategy" class="level3">
-<h3 class="anchored" data-anchor-id="team-leadership-strategy">Team Leadership &amp; Strategy</h3>
-<ul>
-<li><strong>Technical Mentorship:</strong> I coached team members on modern data science workflows, including distributed coding, functional programming in R, and version control with Git.</li>
-<li><strong>Engineering Roadmap:</strong> I developed a detailed work plan for our Data Engineering and Software Engineering teams by sourcing and prioritizing ETL enhancements to streamline our data pipelines.</li>
-<li><strong>Cross-Agency Collaboration:</strong> I successfully negotiated data-sharing agreements with the Washington State Office of Financial Management and the Employment Security Department. These agreements are critical for our upcoming outcome evaluations, allowing us to link behavioral health interventions with criminal justice and employment data.</li>
-</ul>
+<p>This initiative overhauled how Pierce County understands and manages its behavioral health services. I led a multi-faceted effort that blended stakeholder collaboration, resilient technical design, and team leadership.</p>
+<p><strong>1. Stakeholder Collaboration &amp; System Design</strong> My approach centered on group processes to gather precise requirements from over 30 service providers, program managers, data engineers, and legal teams. Through numerous ongoing meetings, I advocated for shifting from aggregated metrics to client-level data submission, explaining that disaggregation is essential for any meaningful racial equity analysis. I developed the technical specifications for data files, including detailed variable definitions and reporting cadences, while iteratively adapting them to balance analytical rigor with the operational realities of our diverse providers.</p>
+<p><strong>2. Data Engineering and ETL Enhancements</strong> To create a resilient and scalable system, I independently sourced and specified several key enhancements to the data ingestion (ETL) process for our data engineering teams to implement. These included: - <strong>Modular Integration:</strong> Architecting the ETL pipeline so that a data submission failure from one program would not halt the entire system. - <strong>Data Submission Logging:</strong> Designing a logging system to track submissions in accordance with county data retention policies. - <strong>Increased Flexibility:</strong> Making the ETL non-case-sensitive and ideating a protocol to automatically map common invalid values to valid categories, which significantly reduced submission errors.</p>
+<p><strong>3. Data Quality Assurance &amp; Team Leadership</strong> Leading a team of two analysts, I designed and implemented a suite of automated data validation scripts in R. These scripts provided real-time, actionable feedback to providers on how to correct their submissions, identifying invalid values, mismatched client IDs between files, and inconsistent dates. This collaborative work required a new, distributed workflow, and I mentored the analysts on code structure, functional programming, and version control with Git.</p>
+<p><strong>4. Strategic Documentation and Future Vision</strong> To ensure the system’s longevity for new contracts, I architected a comprehensive, 30-plus page business requirements document. This document serves as a complete protocol for tracking, logging, and validating data and includes specifications for automated provider communications. This foundational work set the technical agenda for two separate teams—Software Development and IT-Data Services—for the next contracting cycle.</p>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3935,7 +3920,6 @@ Data for Drug-induced deaths (below) come from the Washington Department of Heal
 </figure>
 </div>
 <hr>
-</section>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">🚀 Next Steps</h2>
