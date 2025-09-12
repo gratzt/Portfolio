@@ -3,7 +3,7 @@ title: "Optimizing Housing Interventions for Equitable Homelessness Reduction"
 format: html
 ---
 
-## 📌 TL;DR
+## TL;DR
 
 - Derived mathematical relationship between housing intervention prioritization and treatment effects for exiting homelessness
 - Used this mathematical relationship to identify a misalignment between the Department of Housing and Urban Development(HUD) policy objectives and optimal resource allocation
